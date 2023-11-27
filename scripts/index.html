@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bombeiros Voluntarios</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <section id="inicio">
+        <img src="LOGO-BVG 1.png" alt="logo" id="logo">
+        <div id="titulo">
+            <h1>BOMBEIROS VOLUNTÁRIOS</h1>
+            <h2>GUARAMIRIM</h2>
+        </div>
+
+        <form action="/database/login.php" method="post">
+            <div class="form-group">
+                <label for="equipe">Equipe - identificação</label>
+                <input type="text" id="equipe" name="equipe" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="button">Entrar</button>   
+            </div>
+        </form>  
+         <a href="/pages/doCadastro.php" style="text-decoration: none; color: white;"><p id="cadastrarEquipe">Clique <u>aqui</u> para cadastrar equipe</p></a>
+    </section>
+
+</body>
+
+</html>

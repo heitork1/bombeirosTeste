@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formatador de Número de Celular</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #phoneInput {
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Formatador de Número de Celular</h2>
+    <label for="phoneInput">Digite seu número de celular:</label>
+    <input type="tel" id="phoneInput" maxlength="15" oninput="formatarNumeroCelular(this)">
+    
+    <script>
+        function formatarNumeroCelular(campo) {
+            // Remove caracteres não numéricos
+            var numeroAtualizado = campo.value.replace(/[^\d]/g, '');
+
+            // Adiciona os parênteses, espaço e o traço
+            if (numeroAtualizado.length > 2) {
+                numeroAtualizado = '(' + numeroAtualizado.substring(0, 2) + ') ' + numeroAtualizado.substring(2);
+            }
+            if (numeroAtualizado.length > 10) {
+                numeroAtualizado = numeroAtualizado.substring(0, 10) + '-' + numeroAtualizado.substring(10, 14);
+            }
+
+            // Atualiza o valor do campo
+            campo.value = numeroAtualizado;
+        }
+    </script>
+</body>
+</html>

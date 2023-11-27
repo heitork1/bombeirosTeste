@@ -1,0 +1,2360 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Ocorrência</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/ocorrencia.css">
+  
+</head>
+
+<body>
+
+  <div id="imagemTitulo">
+    <img id="logomedico" src="../logo_medicina 1.png" alt="">
+  </div>
+  <div id="hugopai">
+    <div class="date-input">
+      <img class="icones" src="../img/calendario.svg" alt="">
+      <p class="topicosiniciais">Data:</p>
+
+      <div>
+      <label class="inputdata" for="date"></label>
+      <input class="inputdata" type="date" id="date" disabled>
+      <br>
+  
+      <label id="inputhora" for="time">Hora:</label>
+      <input type="time" id="time" disabled>
+      <br>
+  
+      <button class="botaodata" type="button" onclick="enableInputs()">Editar</button>
+      <button class="botaodata" type="button" onclick="saveChanges()" style="display:none">Salvar</button>
+
+      </div>
+    </div>
+
+    <h1 style="text-align: center; margin-top: 4%; ;">INFORMAÇÕES DO PACIENTE</h1>
+
+    <div class="nome-input">
+      <div id="topico_nome">
+        <img class="iconepessoa" src="../img/pessoa.svg" alt="">
+        <label for="inputs" class="topicosiniciais">Nome:</label>
+        <input id="inputs" name="nomePaciente" type="text">
+      </div>
+    </div>
+
+    <div class="RG-input">
+      <div id="topico_cpf">
+        <img class="iconecpf" src="../img/identidade.svg" alt="">
+          <label class="topicosiniciais" for="inputs">CPF:</label>
+          <input id="inputcpf" name="cpf" type="text" maxlength="14" oninput="formatarCPF(this)">
+      </div>
+    </div>
+
+    <div class="RG-input">
+      <div id="topico_cpf">
+        <img class="iconecpf" src="../img/telefone 1.svg" alt="">      
+          <label for="inputs" class="topicosiniciais">Telefone:</label>
+          <input type="telefone" id="inputtelefone" maxlength="15" oninput="formatarNumeroCelular(this)">
+
+      </div>
+    </div>
+
+    <div class="RG-input">
+      <div id="topico_cpf">
+        <img class="iconecpf" src="../img/idade.svg" alt="">
+        <label for="inputs" class="topicosiniciais">Idade:</label>
+        <input name="idade" id="inputidade" type="number"
+          oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+          maxlength="3">
+      </div>
+    </div>
+
+
+    <p id="topico-sexo">Sexo:</p>
+    <div class="sexo">
+      <div id="masculino">
+        <input type="radio" name="sexoPaciente" value="Masculino" id="bolinhas">
+        <label id="generos" for="sexo"><img class="masculinofeminino" src="/img/masculino.svg" alt="" width="16%">
+          Masculino</label>
+      </div>
+
+      <div id="feminino">
+        <input type="radio" name="sexoPaciente" value="Feminino" id="bolinhas">
+        <label id="generos" for="sexo"><img class="masculinofeminino" src="/img/feminino.svg" alt="" width="16%">
+          Feminino</label>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- hort -->
+
+
+  <!-- Expandir -->
+
+
+
+  <div class="accordion" id="accordionPanelsStayOpenExample">
+
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button1 collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseFour">
+          <p class="titulomenususpenso">INFORMAÇÕES DO ACOMPANHANTE</p>
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
+        <div class="accordion-body">
+
+          <div id="topico_nome">
+            <label for="inputs" class="topico_nome_acompanhante">Nome:</label>
+            <input id="inputs" name="nomeAcompanhante" type="text">
+          </div>
+
+          <br>
+
+          <p id="relacaopaciente">Relação com o paciente</p>
+
+          <div id="botoesrelacao1">
+
+            <button type="button" name="pai" value="Pai" class="botaoderelação"
+              onclick="mudarCor(this, 'pai')">Pai</button>
+            <button type="button" name="mae" value="Mãe" class="botaoderelação"
+              onclick="mudarCor(this, 'mae')">Mãe</button>
+            <button type="button" name="irmao" value="Irmão" class="botaoderelação"
+              onclick="mudarCor(this, 'irmao')">Irmão</button>
+
+          </div>
+
+          <br>
+
+          <button type="button" name="conjuge" value="Cônjuge" class="botaoderelação"
+            onclick="mudarCor(this, 'conjuge')">Cônjuge</button>
+          <button type="button" name="amigo" value="Amigo" class="botaoderelação"
+            onclick="mudarCor(this, 'amigo')">Amigo</button>
+          <button type="button" name="outro" value="Outro" class="botaoderelação"
+            onclick="mudarCor(this, 'outro')">Outro</button>
+
+          <input type="hidden" name="relacaoEscolhida" id="relacaoEscolhida" value="">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button1 collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false"
+            aria-controls="panelsStayOpen-collapseOne">
+            <p class="titulomenususpenso">ANAMNESE DE EMERGÊNCIA</p>
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <h2>O que aconteceu (sinais e sintomas)</h2>
+            <textarea class="caixa_de_texto_anamnese" name="anamnese" id="" cols="60" rows="5"></textarea>
+            <div class="">
+              <h2>Aconteceu outras vezes?</h2>
+              <input type="radio" name="anamVezes" value="Sim">
+              <label for="simNao">SIM <img src="../img/sim.png" alt=""></label>
+              <input type="radio" name="anamVezes" value="Não">
+              <label for="simNao">NÃO <img src="../img/nao.png" alt=""></label>
+            </div>
+            <div>
+              <h2>A quanto tempo aconteceu?</h2>
+              <label for="hora"><img src="../img/hora.png" alt=""></label>
+              <input type="time" name="horaAconteceu" id="">
+            </div>
+            <div>
+              <h2>Possui algum problema de saúde?</h2>
+              <input type="radio" name="problemaSaude" value="Sim">
+              <label for="simNao">SIM <img src="../img/sim.png" alt=""></label>
+              <input type="radio" name="problemaSaude" value="Não">
+              <label for="simNao">NÃO <img src="../img/nao.png" alt=""></label>
+            </div>
+            <div>
+              <h2>Quais?</h2>
+              <textarea class="caixa_de_texto_anamnese" name="quaisProblemas" id="" cols="70" rows="5"></textarea>
+            </div>
+            <div>
+              <h2>Faz uso de medicação?</h2>
+              <input type="radio" name="usaMedicacao" value="Sim">
+              <label for="simNao">SIM <img src="../img/sim.png" alt=""></label>
+              <input type="radio" name="usaMedicacao" value="Não">
+              <label for="simNao">NÃO <img src="../img/nao.png" alt=""></label>
+            </div>
+            <div>
+              <h2>Horário da última medicação?</h2>
+              <label for="hora"><img src="../img/hora.png" alt=""></label>
+              <input type="time" name="horaMedicacao" id="">
+            </div>
+            <div>
+              <h2>Quais?</h2>
+              <textarea class="caixa_de_texto_anamnese" name="quaisMedicacoes" id="" cols="70" rows="5"></textarea>
+            </div>
+            <div>
+              <h2>Alérgico a alguma coisa?</h2>
+              <input type="radio" name="alergico" value="Sim">
+              <label class="SimNao" for="simNao">SIM <img src="../img/sim.png" alt=""></label>
+              <input type="radio" name="alergico" value="Não">
+              <label class="SimNao" for="simNao">NÃO <img src="../img/nao.png" alt=""></label>
+              <h2>Especifique:</h2>
+              <textarea class="caixa_de_texto_anamnese" name="qualAlergia" id="" cols="70" rows="4"></textarea>
+            </div>
+            <div>
+              <h2>Ingeriu alimento ou líquido ≥ 6 horas</h2>
+              <input type="radio" name="ingeriuAlgo" value="Sim">
+              <label class="SimNao" for="simNao">SIM <img src="../img/sim.png" alt=""></label>
+              <input type="radio" name="ingeriuAlgo" value="Não">
+              <label class="SimNao" for="simNao">NÃO <img src="../img/nao.png" alt=""></label>
+            </div>
+            <div>
+              <h2>Que horas?</h2>
+              <label class="SimNao" for="hora"><img src="../img/hora.png" alt=""></label>
+              <input type="time" name="horaIngeriu" id="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button1 collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+            aria-controls="panelsStayOpen-collapseTwo">
+            <p class="titulomenususpenso">ANAMNESE GESTACIONAL</p>
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <div>
+              <h2>Pré-natal</h2>
+              <input type="radio" name="preNatal" value="Sim" id="bolinhas">
+              <label class="SimNao" for="simNao">SIM <img src="../img/sim.png" alt=""></label>
+              <input type="radio" name="preNatal" value="Não" id="bolinhas">
+              <label class="SimNao" for="simNao">NÃO <img src="../img/nao.png" alt=""></label>
+            </div>
+
+            <div>
+              <h2>Período da gestação</h2>
+              <input class="caixa_de_texto_gestacional" type="text" name="periodoGestacao" id="">
+            </div>
+
+            <br>
+
+            <div>
+              <h2>Nome do médico:</h2>
+              <input class="caixa_de_texto_gestacional" type="text" name="nomeMedico" id="">
+            </div>
+
+            <br>
+
+            <div>
+              <h2>Possíveis complicações</h2>
+              <input type="radio" name="complicacao" value="Sim" id="bolinhas">
+              <label class="SimNao" for="simNao">SIM <img src="../img/sim.png" alt=""></label>
+              <input type="radio" name="complicacao" value="Não" id="bolinhas">
+              <label class="SimNao" for="simNao">NÃO <img src="../img/nao.png" alt=""></label>
+            </div>
+
+            <div>
+              <h2>Primeiro filho?</h2>
+              <input type="radio" name="primeiroFilho" value="Sim" id="bolinhas">
+              <label class="SimNao" for="simNao">SIM <img src="../img/sim.png" alt=""></label>
+              <input type="radio" name="primeiroFilho" value="Não" id="bolinhas">
+              <label class="SimNao" for="simNao">NÃO <img src="../img/nao.png" alt=""></label>
+
+              <h2>Quantos?</h2>
+              <input class="caixa_de_texto_gestacional" name="" id="" type="number"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                maxlength="4">
+            </div>
+
+            <br>
+
+            <div>
+              <h2>Contrações</h2>
+              <input type="radio" name="contracao" value="Sim" id="bolinhas">
+              <label class="SimNao" for="simNao">SIM <img src="../img/sim.png" alt=""></label>
+              <input type="radio" name="contracao" value="Não" id="bolinhas">
+              <label class="SimNao" for="simNao">NÃO <img src="../img/nao.png" alt=""></label>
+
+              <h2>Que horas iniciaram as contrações?</h2>
+              <input class="horario" type="time" name="horaContracao" id="">
+
+              <br>
+              <br>
+
+              <h2>Tempo das contrações:</h2>
+
+              <br>
+
+              <label class="SimNao" for="intervalo">Intervalo:</label>
+              <input class="caixa_de_texto_gestacional" type="text" name="intervalo">
+
+              <br>
+
+              <br>
+
+
+
+              <label class="SimNao" for="duracao">Duração</label>
+              <input class="caixa_de_texto_gestacional" type="text" name="duracaoContracao">
+            </div>
+
+            <br>
+            <br>
+
+            <div>
+              <h2>Pressão no quadril ou vontade de evacuar?</h2>
+              <input type="radio" name="pressao" id="bolinhas" value="Sim">
+              <label class="SimNao" for="simNao">SIM <img src="../img/sim.png" alt=""></label>
+              <input type="radio" name="pressao" id="bolinhas" value="Não">
+              <label class="SimNao" for="simNao">NÃO <img src="../img/nao.png" alt=""></label>
+            </div>
+
+            <br>
+
+            <div>
+              <h2>Já houve ruptura na bolsa?</h2>
+              <input type="radio" name="ruptura" id="bolinhas" value="Sim">
+              <label class="SimNao" for="simNao">SIM <img src="../img/sim.png" alt=""></label>
+              <input type="radio" name="ruptura" id="bolinhas" value="Não">
+              <label class="SimNao" for="simNao">NÃO <img src="../img/nao.png" alt=""></label>
+            </div>
+
+            <br>
+
+            <div>
+              <h2>Foi feita inspeção visual?</h2>
+              <input type="radio" name="inspecao" id="bolinhas" value="Sim">
+              <label class="SimNao" for="simNao">SIM <img src="../img/sim.png" alt=""></label>
+              <input type="radio" name="inspecao" id="bolinhas" value="Não">
+              <label class="SimNao" for="simNao">NÃO <img src="../img/nao.png" alt=""></label>
+            </div>
+
+            <br>
+
+            <div>
+              <h2>Parto realizado?</h2>
+              <input type="radio" name="parto" id="bolinhas" value="Sim">
+              <label class="SimNao" for="simNao">SIM <img src="../img/sim.png" alt=""></label>
+              <input type="radio" name="parto" id="bolinhas" value="Não">
+              <label class="SimNao" for="simNao">NÃO <img src="../img/nao.png" alt=""></label>
+            </div>
+
+            <br>
+
+            <div>
+              <h2>Sexo do bebê</h2>
+              <input type="radio" name="sexoBebe" id="bolinhas" value="masculino">
+              <label class="SimNao" id="generos" for="sexo"><img src="../img/masculino.svg" alt=""> Masculino</label>
+              <input type="radio" name="sexoBebe" id="bolinhas" value="feminino">
+              <label class="SimNao" id="generos" for="sexo"><img src="../img/feminino.svg" alt=""> Feminino</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button1 collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+            aria-controls="panelsStayOpen-collapseThree">
+            <p class="titulomenususpenso">TIPO DE OCORRÊNCIA <br> (PRÉ- HOSPITALAR)</p>
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <fieldset class="radio-image">
+              <div class="linha01">
+                <label for="A">
+                  <input type="radio" name="domestico" id="A" value="A">
+                  <img src="/img/Domiciliar.png" alt="Masculino">
+                  <p>Doméstico</p>
+                </label>
+                <label for="B">
+                  <input type="radio" name="animais" id="B" value="B">
+                  <img src="/img/Animal.png" alt="Feminino">
+                  <p>Causado por animais</p>
+                </label>
+                <label for="C">
+                  <input type="radio" name="afogamento" id="C" value="C">
+                  <img src="/img/Afogamento.png" alt="Feminino">
+                  <p>Afogamento</p>
+                </label>
+              </div>
+              <div class="linha01">
+                <label for="D">
+                  <input type="radio" name="enchente" id="D" value="D">
+                  <img src="/img/Enchente.png" alt="Masculino">
+                  <p>Enchente</p>
+                </label>
+                <label for="E">
+                  <input type="radio" name="desmoronamento" id="E" value="E">
+                  <img src="/img/Desmoronamento.png" alt="Feminino">
+                  <p>Desmoronamento</p>
+                </label>
+                <label for="F">
+                  <input type="radio" name="ventos" id="F" value="F">
+                  <img src="/img/Ventosfortes.png" alt="Feminino">
+                  <p>Ventos fortes</p>
+                </label>
+              </div>
+              <div class="linha01">
+                <label for="G">
+                  <input type="radio" name="incendio" id="G" value="G">
+                  <img src="/img/Incendio.png" alt="Masculino">
+                  <p>Incêndio</p>
+                </label>
+                <label for="H">
+                  <input type="radio" name="intoxicacao" id="H" value="H">
+                  <img src="/img/Intoxicacao.png" alt="Feminino">
+                  <p>Intoxicação</p>
+                </label>
+                <label for="I">
+                  <input type="radio" name="acidenteCarro" id="I" value="I">
+                  <img src="/img/Acidentedecarro.png" alt="Feminino">
+                  <p>Acidente de carro</p>
+                </label>
+              </div>
+              <div class="linha01">
+                <label for="J">
+                  <input type="radio" name="choque" id="J" value="J">
+                  <img src="/img/Choque.png" alt="Masculino">
+                  <p>Choque</p>
+                </label>
+                <label for="K">
+                  <input type="radio" name="agressao" id="K" value="K">
+                  <img src="/img/Agressao.png" alt="Feminino">
+                  <p>Agressão</p>
+                </label>
+                <label for="L">
+                  <input type="radio" name="queda" id="L" value="L">
+                  <img src="/img/Queda.png" alt="Feminino">
+                  <p>Queda</p>
+                </label>
+              </div>
+              <div class="linha01">
+                <label for="M">
+                  <input type="radio" name="acidenteBicicleta" id="M" value="M">
+                  <img src="/img/Acidentedebicicleta.png" alt="Masculino">
+                  <p>Acidente de bicicleta</p>
+                </label>
+                <label for="N">
+                  <input type="radio" name="suicidio" id="N" value="N">
+                  <img src="/img/Suicidio.png" alt="Feminino">
+                  <p>Suicídio</p>
+                </label>
+                <label for="O">
+                  <input type="radio" name="outro" id="O" value="O">
+                  <img src="/img/Outro.png" alt="Feminino">
+                  <p>Outro</p>
+                </label>
+              </div>
+            </fieldset>
+          </div>
+          <div>
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+  <div class="accordion" id="accordionPanelsStayOpenExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button1 collapsed" type="button" data-bs-toggle="collapse"
+        data-bs-target="#panelsStayOpen-collapsefive" aria-expanded="false" aria-controls="panelsStayOpen-collapsefive">
+        <p class="titulomenususpenso">AVALIAÇÃO DO PACIENTE (GLASGOW)</p>
+      </button>
+    </h2>
+
+    <!-- abertura ocular -->
+
+    <div id="panelsStayOpen-collapsefive" class="accordion-collapse collapse">
+      <div class="accordion-body1">
+
+
+
+        <div id="botoespai">
+
+          <div name="maiorQue5Anos" class="botaoPai selected" onclick="togglePai(0)">> 5 anos</div>
+          <div name="menorQue5Anos" class="botaoPai" onclick="togglePai(1)">≤ 5 anos</div>
+
+
+        </div>
+        <div id="imagemglasgow">
+          <img src="../img/ocular.png" alt="">
+        </div>
+
+
+        <div class="aberturaOcular">
+          <div class="box-glasgow">
+
+
+            <div id="botoes">
+
+              <div class="grupoBotoes active maior" id="grupoBotoes1">
+
+                <div>
+                  <div class="botao botao1" onclick="selectBotao(event)" data-valor="4">Espontânea <br> 4</div>
+                  <br>
+                  <div class="botao botao2" onclick="selectBotao(event)" data-valor="3">Comando Verbal <br> 3</div>
+                </div>
+
+                <div>
+                  <div class="botao botao3" onclick="selectBotao(event)" data-valor="2">Estíumulo doloroso <br> 2
+                  </div>
+                  <br>
+                  <div class="botao botao4" onclick="selectBotao(event)" data-valor="1">Nenhuma <br> 1</div>
+                </div>
+
+              </div>
+
+              <div class="grupoBotoes menor" id="grupoBotoes2">
+
+                <div>
+                  <div class="botao botao1" onclick="selectBotao(event)" data-valor="4">Espontânea <br> 4</div>
+                  <br>
+                  <div class="botao botao2" onclick="selectBotao(event)" data-valor="3">Comando Verbal <br> 3</div>
+                </div>
+
+                <div>
+                  <div class="botao botao3" onclick="selectBotao(event)" data-valor="2">Estíumulo doloroso <br> 2
+                  </div>
+                  <br>
+                  <div class="botao botao4" onclick="selectBotao(event)" data-valor="1">Nenhuma <br> 1</div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- resposta verbal -->
+
+        <div id="imagemglasgow2">
+
+          <img src="../img/verbal.png" alt="">
+
+        </div>
+
+        <div class="aberturaOcular">
+
+          <div class="box-glasgow">
+
+
+
+            <div id="botoes">
+
+              <div class="grupoBotoes active maior" id="grupoBotoes11">
+
+                <div>
+
+                  <div class="botao botao5" onclick="selectBotao(event)" data-valor="5">Orientado <br> 5</div>
+
+                  <br>
+
+                  <div class="botao botao1" onclick="selectBotao(event)" data-valor="4">Confuso <br> 4</div>
+                  <br>
+                  <div class="botao botao2" onclick="selectBotao(event)" data-valor="3">Palavras Inapropriadas <br>
+                    3</div>
+                </div>
+
+                <div>
+                  <div class="botao botao3" onclick="selectBotao(event)" data-valor="2">Palavras incompreensíveis
+                    <br> 2
+                  </div>
+                  <br>
+                  <div class="botao botao4" onclick="selectBotao(event)" data-valor="1">Nenhuma <br> 1</div>
+                </div>
+
+              </div>
+
+              <div class="grupoBotoes menor" id="grupoBotoes22">
+
+
+                <div>
+
+                  <div class="botao botao5" onclick="selectBotao(event)" data-valor="5">Orientado <br> 5</div>
+
+                  <br>
+
+                  <div class="botao botao1" onclick="selectBotao(event)" data-valor="4">Espontânea <br> 4</div>
+                  <br>
+                  <div class="botao botao2" onclick="selectBotao(event)" data-valor="3">Choro persistente ou <br> 3
+                  </div>
+                </div>
+
+                <div>
+                  <div class="botao botao3" onclick="selectBotao(event)" data-valor="2">Sons incompreensíveis <br> 2
+                  </div>
+                  <br>
+                  <div class="botao botao4" onclick="selectBotao(event)" data-valor="1">Nenhuma resposta verbal <br> 1
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+
+
+
+
+        <!-- resposta motora -->
+
+        <div id="imagemglasgow3">
+
+          <img src="../img/motora.png" alt="">
+
+        </div>
+        <div id="botoes">
+
+          <div class="grupoBotoes active maior" id="grupoBotoes111">
+
+
+            <div class="dentroBotoes">
+              <div class="botao botao6" onclick="selectBotao(event)" data-valor="6">Espontânea <br> 6
+              </div>
+              <br>
+              <div class="botao botao5" onclick="selectBotao(event)" data-valor="5">Choro persistente ou <br> 5
+              </div>
+            </div>
+            <div class="dentroBotoes">
+              <div class="botao botao1" onclick="selectBotao(event)" data-valor="4">Confuso <br> 4</div>
+              <br>
+              <div class="botao botao2" onclick="selectBotao(event)" data-valor="3">Palavras Inapropriadas <br> 3
+              </div>
+            </div>
+
+            <div class="dentroBotoes">
+              <div class="botao botao3" onclick="selectBotao(event)" data-valor="2">Palavras incompreensíveis 2
+              </div>
+              <br>
+              <br>
+              <div class="botao botao4" onclick="selectBotao(event)" data-valor="1">Nenhuma <br> 1</div>
+            </div>
+
+          </div>
+
+          <div class="grupoBotoes menor" id="grupoBotoes222">
+
+            <div class="dentroBotoes2">
+              <div class="botao botao6" onclick="selectBotao(event)" data-valor="6">Espontânea <br> 6
+              </div>
+              <br>
+              <div class="botao botao5" onclick="selectBotao(event)" data-valor="5">Choro persistente ou <br> 5
+              </div>
+            </div>
+
+            <div class="dentroBotoes3">
+              <div class="botao botao3" onclick="selectBotao(event)" data-valor="2">Espontânea <br> 4
+              </div>
+              <br>
+              <div class="botao botao4" onclick="selectBotao(event)" data-valor="3">>Choro persistente ou <br> 3
+              </div>
+            </div>
+
+            <div class="dentroBotoes4">
+              <div class="botao botao3" onclick="selectBotao(event)" data-valor="2">Sons incompreensíveis <br> 2
+              </div>
+              <br>
+              <div class="botao botao4" onclick="selectBotao(event)" data-valor="1">Nenhuma resposta verbal <br> 1
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="somatotal">
+        <p>Total: <span id="total">0</span></p>
+      </div>
+      <input type="hidden" name="totalGlasgow" id="totalGlasgow" value="">
+    </div>
+  </div>
+  </div>
+
+  <div class="accordion" id="accordionPanelsStayOpenExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button1 collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
+          <p class="titulomenususpenso">SINAIS VITAIS</p>
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse">
+        <div class="accordion-body">
+          <div class="pressao svTopico">
+            <h2>Pressão arterial: </h2>
+            <input name="pressaoArterial" id="" type="number"
+              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              maxlength="2">
+            <p>x</p>
+            <input name="pressaoArterial2" id="" type="number"
+              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              maxlength="2">
+            <h2> mmHg</h2>
+          </div>
+          <div class="pulso svTopico">
+            <h2>Pulso:</h2>
+            <input name="pulso" id="" type="number"
+              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              maxlength="3">
+            <h2>B.C.P.M.</h2>
+          </div>
+          <div class="respiracao svTopico">
+            <h2>Respiração:</h2>
+            <input name="respiracao" id="" type="number"
+              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              maxlength="3">
+            <h2>M.R.M.</h2>
+          </div>
+          <div class="saturacao svTopico">
+            <h2>Saturação: </h2>
+            <input name="saturacao" id="" type="number"
+              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              maxlength="3">
+            <h2>%</h2>
+          </div>
+          <div class="hgt svTopico">
+            <h2>HGT:</h2>
+            <input name="hgt" id="" type="number"
+              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              maxlength="3">
+          </div>
+          <div class="temperatura svTopico">
+            <h2>Temperatura:</h2>
+            <input name="temperatura" id="" type="number"
+              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              maxlength="3">
+            <h2>°C</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="accordion" id="accordionPanelsStayOpenExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button1 collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapsesix" aria-expanded="false" aria-controls="panelsStayOpen-collapsesix">
+          <p class="titulomenususpenso">PROBLEMAS ENCONTRADOS SUSPEITOS</p>
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapsesix" class="accordion-collapse collapse">
+        <div class="accordion-body">
+          <div class="problemasSusp"><input type="checkbox" name="problema[]" id="" value="Psiquiátrico"><label
+              for="">Psiquiátrico</label></div>
+
+          <div class="problemasSusp" id="respiracao"><input type="checkbox" name="problema[]" id="respiratorio"
+              value="Respiratório"><label for="">Respiratório +</label></div>
+          <div class="invisivel respOpc" style="display: none;">
+            <div class="invisivelDivSinais">
+              <div class="sinaisOpcoes"><input type="checkbox" name="problema[]" id="DPOC" value="DPOC"><label
+                  for="DPOC">DPOC</label></div>
+              <div class="sinaisOpcoes"><input type="checkbox" name="problema[]" id="inalacao"
+                  value="Inalação fumaça"><label for="inalacao">Inalação fumaça</label></div>
+            </div>
+          </div>
+
+          <div class="problemasSusp" id="diabetes"><input type="checkbox" name="problema[]" id="hiperglicemia"
+              value="Diabetes"><label for="hiperglicemia">Diabetes +</label></div>
+          <div class="invisivel diabetesOpc" style="display: none;">
+            <div class="invisivelDivSinais">
+              <div class="sinaisOpcoes"><input type="checkbox" name="problema[]" id="hiperglicemia"
+                  value="hiperglicemia"><label for="hiperglicemia">Hiperglicemia</label></div>
+              <div class="sinaisOpcoes"><input type="checkbox" name="problema[]" id="hipoglicemia"
+                  value="hipoglicemia"><label for="hipoglicemia">Hipoglicemia</label></div>
+            </div>
+          </div>
+
+          <div class="problemasSusp"><input type="checkbox" name="problema[]" id="outros"><label
+              for="outrosProblemasSuspeitos">Outros:</label><input type="text"></div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion" id="accordionPanelsStayOpenExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button1 collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseseven" aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseseven">
+          <p class="titulomenususpenso">LOCALIZAÇÃO DOS TRAUMAS</p>
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseseven" class="accordion-collapse collapse">
+        <div class="accordion-body">
+
+          <div id="corpoCompleto">
+
+            <div class="corpoFrente">
+    
+                <!-- Cabeça -->
+    
+                <figure class="imagem1">
+                    <button id="cabeca" onclick="mostrarModal('cabeca')">
+                        <!-- Adicione este elemento de imagem ao seu corpo HTML com um ID específico -->
+                        <img id="" src="" alt="">
+    
+                        <svg xmlns="http://www.w3.org/2000/svg" width="59" height="72" viewBox="0 0 59 72" fill="none">
+                            <path
+                                d="M28.9998 1C6.25031 3.25822 2.52496 10.8788 7.99981 33C-3.06877 27.7337 1.23598 37.85 9.4999 52.5C17.7638 67.15 18.3627 67.9068 28.9998 70C40.0271 67.7608 44.2174 64.1021 46.9998 52C57.1166 38.6829 62.6427 28.5564 50.9998 33C54.9529 9.42403 49.9395 2.55682 28.9998 1Z"
+                                fill="white" stroke="black" stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <!-- Pescoço -->
+    
+                <figure class="imagem2">
+    
+                    <button id="pescoco" onclick="mostrarModal('pescoco')">
+    
+                        <img id="" src="" alt="">
+    
+                        <svg xmlns="http://www.w3.org/2000/svg" width="42" height="20" viewBox="0 0 42 20" fill="none">
+                            <path
+                                d="M4.5 1C5.30522 9.31686 5.48624 13.7578 2.5 19H40C37.0753 13.9955 37.2038 9.5209 38 1H4.5Z"
+                                fill="white" stroke="black" stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <!-- Peito -->
+    
+                <figure class="imagem3">
+                    <button id="peito" onclick="mostrarModal('peito')">
+                        <img id="peito" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="112" height="71" viewBox="0 0 112 71" fill="none">
+                            <path d="M111 19.5L96 11L77 1.5H35L14.5 11L1 19.5V52L17 67L48.5 60L62 61.5L94 69.5L111 50V19.5Z"
+                                fill="white" stroke="black" stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <!-- Braço Esquerdo -->
+    
+                <figure class="imagem4">
+                    <button id="ombro" onclick="mostrarModal('ombroEsquerdo')">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="31" height="46" viewBox="0 0 31 46" fill="none">
+                            <path d="M9.5 8L22 2L29.5 43L5 44.5L1.5 31.5L9.5 8Z" fill="white" stroke="black"
+                                stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <figure class="imagem5">
+                    <button id="bracoe" onclick="mostrarModal('braçoEsquerdo')">
+                        <img id="" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="39" height="122" viewBox="0 0 39 122" fill="none">
+                            <path
+                                d="M6.63663 56.5C12.5112 37.6009 13.2738 25.6372 13.1366 3.5L37.6366 2L36.1366 30C33.8786 42.6003 34.0345 47.0102 36.1366 51.5C37.6398 55.521 37.569 58.546 36.1366 65L16.1366 120.5H2C2.94526 90.1878 4.0004 70.8473 6.63663 56.5Z"
+                                fill="white" stroke="black" stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <figure class="imagem6">
+                    <button onclick="mostrarModal('mãoEsquerda')">
+                        <img id="maoe" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="29" height="50" viewBox="0 0 29 50" fill="none">
+                            <path
+                                d="M17.5 48.5C8.53948 47.6145 4.53126 44.8553 1 32C1.30455 20.7318 1.57899 10.6194 1.86337 1.5H16L24.5 21C30.6972 38.3362 28.5752 38.6485 16 24.5C15.7266 29.9513 17.8386 34.0127 24.5 42.5C23.2542 47.4125 21.6528 48.6029 17.5 48.5Z"
+                                fill="white" stroke="black" stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <!-- Braço Direito -->
+    
+                <figure class="imagem7">
+                    <button onclick="mostrarModal('ombroDireito')">
+                        <img id="ombrod" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="46" viewBox="0 0 32 46" fill="none">
+                            <path d="M22 8L9.5 2L2 43L26.5 44.5L30 31.5L22 8Z" fill="white" stroke="black"
+                                stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <figure class="imagem8">
+                    <button onclick="mostrarModal('braçoDireito')">
+                        <img id="" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="39" height="122" viewBox="0 0 39 122" fill="none"
+                            id="bracod">
+                            <path
+                                d="M33.0001 56.5C27.1255 37.6009 26.363 25.6372 26.5001 3.5L2.00009 2L3.50009 30C5.75813 42.6003 5.60224 47.0102 3.50009 51.5C1.99688 55.521 2.06773 58.546 3.50009 65L23.5001 120.5H37.6367C36.6915 90.1878 35.6363 70.8473 33.0001 56.5Z"
+                                fill="white" stroke="black" stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <figure class="imagem9">
+                    <button onclick="mostrarModal('mãoDireita')">
+                        <img id="" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="50" viewBox="0 0 30 50" fill="none"
+                            id="maod">
+                            <path
+                                d="M12 48.5C20.9605 47.6145 24.9687 44.8553 28.5 32C28.1954 20.7318 27.921 10.6194 27.6366 1.5H13.5L5 21C-1.19719 38.3362 0.924805 38.6485 13.5 24.5C13.7734 29.9513 11.6614 34.0127 5 42.5C6.24578 47.4125 7.84718 48.6029 12 48.5Z"
+                                fill="white" stroke="black" stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <!-- Tronco -->
+    
+                <figure class="imagem10">
+                    <button onclick="mostrarModal('tronco')">
+                        <img id="" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="120" viewBox="0 0 100 120" fill="none"
+                            id="tronco">
+                            <path
+                                d="M8.49977 54.5C2.37698 32.1398 0.927945 20.4511 1.99977 1H97.9998C98.2976 23.8677 97.0656 35.7851 90.9998 54.5C93.1505 59.947 93.1673 63.0156 92.4998 68.5C91.0088 76.2298 91.6878 80.6246 93.9998 88.5C96.8667 97.0324 97.3971 101.863 97.9998 110.5H75.4998C65.1658 110.395 57.3884 118.964 49.9998 119C42.7993 119.035 35.968 110.535 27.4998 110.5H1.99977C1.9842 102.264 2.0124 97.6276 4.49977 88.5C6.9345 80.917 7.70653 76.5768 6.99977 68.5C6.6853 60.9388 7.04969 57.9783 8.49977 54.5Z"
+                                fill="white" stroke="black" stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <!-- Perna Esquerda -->
+    
+                <figure class="imagem11">
+                    <button onclick="mostrarModal('coxaEsquerda')">
+                        <img id="" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="51" height="104" viewBox="0 0 51 104" fill="none"
+                            id="coxae">
+                            <path
+                                d="M27 1H2C2.87464 24.9153 3.6637 39.2179 6.5 69C8.39924 81.1619 10.5857 88.3656 17 102L49 96C47.6432 79.431 47.4826 70.8166 49 57.5V11L27 1Z"
+                                fill="white" stroke="black" stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <figure class="imagem12">
+                    <button onclick="mostrarModal('joelhoEsquerdo')">
+                        <img id="" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="78" viewBox="0 0 38 78" fill="none"
+                            id="joelhoe">
+                            <path d="M36 37.5V2L4 8V26.5L1 55V73.5L36 76.5C32.5157 55.0546 31.5389 44.7762 36 37.5Z"
+                                fill="white" stroke="black" stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <figure class="imagem13">
+                    <button onclick="mostrarModal('panturrilhaEsquerda')">
+                        <img id="" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="39" height="81" viewBox="0 0 39 81" fill="none"
+                            id="panturrilhae">
+                            <path
+                                d="M37 23C37.9519 15.3916 38.0551 11.2936 37 4.5L2 1.5C4.79098 23.3652 7.14817 35.8126 15.5 59C17.0911 66.8127 16.7075 71.1883 15.5 79L37 68C33.9776 60.0753 35.287 50.0466 34.8756 43.5C34.1371 31.7464 34.5304 25.1068 37 23Z"
+                                fill="white" stroke="black" stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <figure class="imagem14">
+                    <button onclick="mostrarModal('péEsquerdo')">
+                        <img id="" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="39" height="34" viewBox="0 0 39 34" fill="none"
+                            id="pee">
+                            <path
+                                d="M36 28.5C35.1874 25.528 39.0224 9.92472 36 2L14.5 13L1.57895 29.2555C0.537255 30.566 1.4705 32.5 3.1446 32.5H28L36 28.5Z"
+                                fill="white" stroke="black" stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <!-- Perna Direita -->
+    
+                <figure class="imagem15">
+                    <button onclick="mostrarModal('coxaDireita')">
+                        <img id="" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="104" viewBox="0 0 50 104" fill="none"
+                            id="coxad">
+                            <path
+                                d="M23.1797 1H48.1797C47.305 24.9153 46.516 39.2179 43.6797 69C41.7805 81.1619 39.594 88.3656 33.1797 102L1.17969 96C2.53649 79.431 2.69704 70.8166 1.17969 57.5V11L23.1797 1Z"
+                                fill="white" stroke="black" stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <figure class="imagem16">
+                    <button onclick="mostrarModal('joelhoDireito')">
+                        <img id="" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="39" height="78" viewBox="0 0 39 78" fill="none"
+                            id="joelhod">
+                            <path
+                                d="M2.17969 37.5V2L34.1797 8V26.5L37.1797 55V73.5L2.17969 76.5C5.66401 55.0546 6.64077 44.7762 2.17969 37.5Z"
+                                fill="white" stroke="black" stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <figure class="imagem17">
+                    <button onclick="mostrarModal('panturrilhaDireita')">
+                        <img id="" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="39" height="81" viewBox="0 0 39 81" fill="none"
+                            id="panturrilhad">
+                            <path
+                                d="M2.17969 23C1.22783 15.3916 1.12454 11.2936 2.17969 4.5L37.1797 1.5C34.3887 23.3652 32.0315 35.8126 23.6797 59C22.0886 66.8127 22.4722 71.1883 23.6797 79L2.17969 68C5.20204 60.0753 3.89273 50.0466 4.30408 43.5C5.04262 31.7464 4.64924 25.1068 2.17969 23Z"
+                                fill="white" stroke="black" stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <figure class="imagem18">
+                    <button onclick="mostrarModal('péDireito')">
+                        <img id="" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="39" height="34" viewBox="0 0 39 34" fill="none"
+                            id="ped">
+                            <path
+                                d="M2.17969 28.5C2.9923 25.528 -0.842663 9.92472 2.17969 2L23.6797 13L36.6007 29.2555C37.6424 30.566 36.7092 32.5 35.0351 32.5H10.1797L2.17969 28.5Z"
+                                fill="white" stroke="black" stroke-width="2" />
+                        </svg>
+                    </button onclick="mostrarModal()">
+                </figure>
+            </div>
+    
+            <div class="corpoVerso">
+    
+                <!-- Nuca -->
+    
+                <figure class="imagem19">
+                    <button id="cabeca" onclick="mostrarModal('nuca')">
+                        <img id="" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="71" viewBox="0 0 56 71" fill="none"
+                            id="nuca">
+                            <path
+                                d="M48.4999 14.5C36.1795 -3.95649 19.7243 -0.839087 7.49992 14.5L4.00011 34.5C-0.416452 42.4312 1.02962 45.296 7.49992 53C7.5 59.1608 10.7944 65.0513 16.5496 67.2498C24.9401 70.4549 31.8398 70.6255 39.6191 67.5739C45.4068 65.3035 48.4999 59.2171 48.4999 53C56.0114 43.3038 56.7185 38.8789 50.9999 33L48.4999 14.5Z"
+                                fill="white" stroke="black" stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <!-- Pescoço -->
+    
+                <figure class="imagem20">
+                    <button onclick="mostrarModal('pescoçoVerso')">
+                        <img id="" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="42" height="20" viewBox="0 0 42 20" fill="none"
+                            id="pescocov">
+                            <path
+                                d="M4.5 1C5.30522 9.31686 5.48624 13.7578 2.5 19H40C37.0753 13.9955 37.2038 9.5209 38 1H4.5Z"
+                                fill="white" stroke="black" stroke-width="2" />
+                        </svg>
+                    </button onclick="mostrarModal()">
+                </figure>
+    
+                <!-- Costas -->
+    
+                <figure class="imagem21">
+                    <button onclick="mostrarModal('costas')">
+                        <img id="" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="112" height="88" viewBox="0 0 112 88" fill="none"
+                            id="costas">
+                            <path d="M111 19L96 10.5L77 1H35L14.5 10.5L1 19V51.5L10.5 86L47.5 72H64.5L103.5 86L111 49.5V19Z"
+                                fill="white" stroke="black" stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <!-- Braço Esquerdo -->
+    
+                <figure class="imagem22">
+                    <button onclick="mostrarModal('ombroEsquerdoVerso')">
+                        <img id="" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="43" viewBox="0 0 25 43" fill="none"
+                            id="ombroev">
+                            <path d="M4.5 18.5C6.45189 8.69518 9.88843 4.86806 21.5 2L23.5 41.5H2L4.5 18.5Z" stroke="black"
+                                stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <figure class="imagem23">
+                    <button onclick="mostrarModal('braçoEsquerdoVerso')">
+                        <img id="" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="122" viewBox="0 0 38 122" fill="none"
+                            id="bracoev">
+                            <path
+                                d="M11.1504 40.5C10.6319 27.3946 10.7224 18.4842 11.1504 1.5H32.6504L36.1504 31C34.2539 35.435 33.4831 39.638 32.6504 50.5C31.5008 74.4959 28.8963 85.2383 22.1503 101.5C17.9385 109.61 16.2554 113.898 16.1503 120.5H1.0791C1.92931 97.9121 2.57346 82.233 3.65035 57C6.00993 49.4616 7.77279 46.0804 11.1504 40.5Z"
+                                stroke="black" stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <figure class="imagem24">
+                    <button onclick="mostrarModal('mãoEsquerdaVerso')">
+                        <img id="" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="45" viewBox="0 0 26 45" fill="none"
+                            id="maoev">
+                            <path
+                                d="M5.65059 37.5C0.839008 30.9725 -0.376726 26.0671 2.65059 13C2.8006 8.94243 2.94264 5.1319 3.07934 1.5H18.1506C21.3582 5.75652 22.5306 8.31747 24.1506 13V30.5C22.4755 33.5396 21.2684 34.0246 18.1506 30.5C15.4189 22.0553 13.8742 22.1064 11.1506 30.5C13.0544 36.4039 15.2885 38.0117 21.6506 37.5C25.3081 41.6283 25.3261 42.8896 21.6506 43.5L5.65059 37.5Z"
+                                stroke="black" stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <!-- Braço Direito -->
+    
+                <figure class="imagem25">
+                    <button onclick="mostrarModal('ombroDireitoVerso')">
+                        <img id="" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="43" viewBox="0 0 25 43" fill="none"
+                            id="ombrodv">
+                            <path
+                                d="M20.6504 18.5C18.6985 8.69518 15.262 4.86806 3.65039 2L1.65039 41.5H23.1504L20.6504 18.5Z"
+                                stroke="black" stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <figure class="imagem26">
+                    <button onclick="mostrarModal('braçoDireitoVerso')">
+                        <img id="" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="39" height="122" viewBox="0 0 39 122" fill="none"
+                            id="ombrodv">
+                            <path
+                                d="M27 40.5C27.5185 27.3946 27.428 18.4842 27 1.5H5.50004L2.00004 31C3.89646 35.435 4.6673 39.638 5.50004 50.5C6.64955 74.4959 9.25405 85.2383 16 101.5C20.2119 109.61 21.895 113.898 22 120.5H37.0713C36.2211 97.9121 35.5769 82.233 34.5 57C32.1405 49.4616 30.3776 46.0804 27 40.5Z"
+                                stroke="black" stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <figure class="imagem27">
+                    <button onclick="mostrarModal('mãoDireitaVerso')">
+                        <img id="" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="45" viewBox="0 0 27 45" fill="none"
+                            id="maodv">
+                            <path
+                                d="M20.4998 37.5C25.3114 30.9725 26.5271 26.0671 23.4998 13C23.3498 8.94243 23.2078 5.1319 23.071 1.5H7.9998C4.79219 5.75652 3.61976 8.31747 1.9998 13V30.5C3.67488 33.5396 4.88203 34.0246 7.9998 30.5C10.7315 22.0553 12.2762 22.1064 14.9998 30.5C13.096 36.4039 10.8619 38.0117 4.4998 37.5C0.842241 41.6283 0.824251 42.8896 4.4998 43.5L20.4998 37.5Z"
+                                stroke="black" stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <!-- Tronco -->
+    
+                <figure class="imagem28">
+                    <button onclick="mostrarModal('troncoVerso')">
+                        <img id="" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="96" height="94" viewBox="0 0 96 94" fill="none"
+                            id="troncov">
+                            <path
+                                d="M38 1L1.5 15.5L7.5 36.5C7.61761 43.5369 6.88414 47.5915 4.5 55V65C5.89305 68.7648 5.98939 71.3131 4.5 77L1.5 93H92.5L90 77C88.9389 71.4893 88.3807 68.4236 90 65V55C87.182 48.2574 86.0076 44.3066 85.5 36.5L94.5 15.5L55.5 1H38Z"
+                                stroke="black" stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <!-- Bunda -->
+    
+                <figure class="imagem29">
+                    <button onclick="mostrarModal('bunda')">
+                        <img id="" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="99" height="47" viewBox="0 0 99 47" fill="none"
+                            id="bunda">
+                            <path
+                                d="M95.5001 1H4.50007C0.793811 11.9378 1.15043 23.593 2.50007 46H97.0001C98.2906 29.3899 98.6694 19.8972 95.5001 1Z"
+                                fill="white" />
+                            <path
+                                d="M56.5001 6C49.8121 21.3453 48.2502 29.4254 55.9737 40.2757C56.3024 40.7374 56.8342 41.0324 57.3986 41.0843C79.1102 43.0837 84.7492 40.7496 89.5001 34M43.0001 6C49.7744 24.7594 50.7181 33.1255 43.4352 40.566C43.1567 40.8505 42.7849 41.0394 42.3928 41.109C26.9947 43.8433 19.4022 42.8765 9.50007 34M4.50007 1H95.5001C98.6694 19.8972 98.2906 29.3899 97.0001 46H2.50007C1.15043 23.593 0.793811 11.9378 4.50007 1Z"
+                                stroke="black" stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <!-- Perna Esquerda -->
+    
+                <figure class="imagem30">
+                    <button onclick="mostrarModal('coxaEsquerdaVerso')">
+                        <img id="" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="88" viewBox="0 0 50 88" fill="none"
+                            id="coxaev">
+                            <path
+                                d="M2 1H49V86.5H17.4624C17.4237 77.5504 16.1727 69.424 13.5 59C6.95637 35.165 4.01982 22.2302 2 1Z"
+                                stroke="black" stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <figure class="imagem31">
+                    <button onclick="mostrarModal('joelhoEsquerdoVerso')">
+                        <img id="" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="39" height="41" viewBox="0 0 39 41" fill="none"
+                            id="joelhoev">
+                            <path
+                                d="M37 1.5C34.6193 9.80374 34.258 18.2985 35 39L1.96493 32.5C2.37571 30.1095 2.8866 27.6307 3.5 25C4.80629 15.7373 5.49209 8.37567 5.46237 1.5H37Z"
+                                stroke="black" stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <figure class="imagem32">
+                    <button onclick="mostrarModal('panturrilhaEsquerdaVerso')">
+                        <img id="" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="41" height="88" viewBox="0 0 41 88" fill="none"
+                            id="panturrilhaev">
+                            <path
+                                d="M14.5 77L4.5 42C1.4209 24.8354 0.790516 14.6537 2.96493 2L36 8.5L38 30.5L33.5 55C32.3732 72.7096 32.9847 80.3034 38 86.5H14.5848C15.0943 83.5904 15.0956 80.4663 14.5 77Z"
+                                stroke="black" stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <figure class="imagem33">
+                    <button onclick="mostrarModal('péEsquerdoVerso')">
+                        <img id="" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="25" viewBox="0 0 38 25" fill="none"
+                            id="peev">
+                            <path
+                                d="M37 23.5H3.77785C2.00323 23.5 1.09325 21.3449 2.27652 20.0223C7.89733 13.7399 11.2761 7.98883 12.5 1H37V23.5Z"
+                                stroke="black" stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <!-- Perna Direita -->
+    
+                <figure class="imagem34">
+                    <button onclick="mostrarModal('coxaDireitaVerso')">
+                        <img id="" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="88" viewBox="0 0 50 88" fill="none"
+                            id="coxadv">
+                            <path
+                                d="M48 1H1V86.5H32.5376C32.5763 77.5504 33.8273 69.424 36.5 59C43.0436 35.165 45.9802 22.2302 48 1Z"
+                                stroke="black" stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <figure class="imagem35">
+                    <button onclick="mostrarModal('joelhoDireitoVerso')">
+                        <img id="" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="39" height="41" viewBox="0 0 39 41" fill="none"
+                            id="joelhodv">
+                            <path
+                                d="M2 1.5C4.38071 9.80374 4.74199 18.2985 4 39L37.0351 32.5C36.6243 30.1095 36.1134 27.6307 35.5 25C34.1937 15.7373 33.5079 8.37567 33.5376 1.5H2Z"
+                                stroke="black" stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <figure class="imagem36">
+                    <button onclick="mostrarModal('panturrilhaDireitaVerso')">
+                        <img id="" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="41" height="88" viewBox="0 0 41 88" fill="none"
+                            id="panturrilhadv">
+                            <path
+                                d="M26.5 77L36.5 42C39.5791 24.8354 40.2095 14.6537 38.0351 2L5 8.5L3 30.5L7.5 55C8.6268 72.7096 8.01526 80.3034 3 86.5H26.4152C25.9057 83.5904 25.9044 80.4663 26.5 77Z"
+                                stroke="black" stroke-width="2" />
+                        </svg>
+                    </button>
+                </figure>
+    
+                <figure class="imagem37">
+    
+                    <button onclick="mostrarModal('péDireitoVerso')">
+                        <img id="" src="" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="25" viewBox="0 0 38 25" fill="none"
+                            id="pedv">
+                            <path
+                                d="M1 23.5H34.2222C35.9968 23.5 36.9067 21.3449 35.7235 20.0223C30.1027 13.7399 26.7239 7.98883 25.5 1H1V23.5Z"
+                                stroke="black" stroke-width="2" />
+                        </svg>
+    
+                    </button>
+    
+                </figure>
+            </div>
+    
+        </div>
+    
+    
+        <!-- Janela modal -->
+        <div id="modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <p>Escolha a categoria:</p>
+                <button id="fraturas" onclick="selectTrauma('Fraturas-Luxações-Entorses')"> <img src="../img/Frame 22.png"
+                        alt=""> Fraturas /
+                    Luxações /
+                    Entorses</button>
+                <button onclick="selectTrauma('Ferimentos-Diversos')"> <img src="../img/Frame 23.png" alt=""> Ferimentos
+                    Diversos</button>
+                <button onclick="selectTrauma('Hemorragias')"> <img src="../img/Frame 24.png" alt="">Hemorragias</button>
+                <button onclick="selectTrauma('Evisceração')"> <img src="../img/Frame 25.png" alt="">Evisceração</button>
+                <button onclick="selectTrauma('F.A.B./F.A.F.')"> <img src="../img/Frame 26.png" alt="">F.A.B./F.A.F.</button>
+                <button onclick="selectTrauma('Amputação')"> <img src="../img/Frame 27.png" alt="">Amputação</button>
+                <button onclick="selectTrauma('Queimadura 1°Grau')"> <img src="../img/Frame 28.png" alt="">Queimadura
+                    1°Grau</button>
+                <button onclick="selectTrauma('Queimadura 2°Grau')"> <img src="../img/Frame 29.png" alt="">Queimadura
+                    2°Grau</button>
+                <button onclick="selectTrauma('Queimadura 3°Grau')"> <img src="../img/Frame 30.png" alt="">Queimadura
+                    3°Grau</button>
+            </div>
+        </div>
+    
+        <div>
+            <button onclick="enviarTrauma()">Enviar pro banco</button>
+        </div>
+    
+        <div>
+            <p>Tipo de ferimento:</p>
+            <p id="tipo"></p>
+        </div>
+
+        <form action="../database/server.php" method="post" id="meuForm">
+          <input type="hidden" id="parte1" name="parte1">
+          <input type="hidden" id="tipo1" name="tipo1">
+          <input type="submit" value="Enviar">
+        </form>
+        <script src="../jquery-1.8.2.min.js"></script>
+        <script src="../scripts/assets.js"></script>
+
+          <button class="botaoderelação" onclick="mudarCor(this)">Adulto</button>
+          <button class="botaoderelação" onclick="mudarCor(this)">Criança</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button1 collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseeight" aria-expanded="false"
+            aria-controls="panelsStayOpen-collapseeight">
+            <p class="titulomenususpenso">SINAIS E SINTOMAS</p>
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseeight" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id=""
+                value="Afundamento de crânio"><label for="">Afundamento de crânio</label></div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id="" value="Agitação"><label
+                for="">Agitação</label></div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id="" value="Amnésia"><label
+                for="">Amnésia</label></div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id=""
+                value="Angina de Peito"><label for="">Angina de Peito</label></div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id="" value="Apineia"><label
+                for="">Apineia</label></div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id="" value="Bradicardia"><label
+                for="">Bradicardia</label></div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id=""
+                value="Abdomen sensível ou rígido"><label for="">Abdomen sensível ou rígido</label></div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id="" value="Bradpneia"><label
+                for="">Bradpneia</label></div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id=""
+                value="Bronco-aspirando"><label for="">Bronco-aspirando</label></div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id="" value="Cefaleia"><label
+                for="">Cefaleia</label></div>
+            <div class="sinaisSintomas" id="cianose"><input type="checkbox" name="sinaisSintomas[]"
+                value="Cianose"><label for="">Cianose +</label></div>
+            <div class="invisivel cianoseOpc" style="display: none;">
+              <div class="invisivelDivSinais">
+                <div class="sinaisOpcoes"><input type="checkbox" name="sinaisSintomas[]" value="Lábios"><label
+                    for="labios">Lábios</label></div>
+                <div class="sinaisOpcoes"><input type="checkbox" name="sinaisSintomas[]" value="Extremidade"><label
+                    for="labios">Extremidade</label></div>
+              </div>
+            </div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id="" value="Convulsão"><label
+                for="">Convulsão</label></div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id="" value="Decorticação"><label
+                for="">Decorticação</label></div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id="" value="Deformidade"><label
+                for="">Deformidade</label></div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id=""
+                value="Descerebração"><label for="">Descerebração</label></div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id="" value="Desmaio"><label
+                for="">Desmaio</label></div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id=""
+                value="Desvio de traqueia"><label for="">Desvio de traqueia</label></div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id="" value="Dispneia"><label
+                for="">Dispneia</label></div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id="" value="Dor local"><label
+                for="">Dor local</label></div>
+            <div class="sinaisSintomas" id="edema"><input type="checkbox" name="sinaisSintomas[]" value="Edema"><label
+                for="">Edema +</label></div>
+            <div class="invisivel edemaOpc" style="display: none;">
+              <div class="invisivelDivSinais">
+                <div class="sinaisOpcoes"><input type="checkbox" name="sinaisSintomas[]" value="Generalizado"><label
+                    for="generalizado">Generalizado</label></div>
+                <div class="sinaisOpcoes"><input type="checkbox" name="sinaisSintomas[]" value="Localizado"><label
+                    for="localizado">Localizado</label></div>
+              </div>
+            </div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id=""
+                value="Enfisema subcutâneo"><label for="">Enfisema subcutâneo</label></div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id=""
+                value="Entase de jugular"><label for="">Entase de jugular</label></div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id="" value="Face pálida"><label
+                for="">Face pálida</label></div>
+            <div class="sinaisSintomas" id="hemorragia"><input type="checkbox" name="sinaisSintomas[]" id=""
+                value="Hemorragia"><label for="">Hemorragia</label></div>
+            <div class="invisivel hemoOpc" style="display: none;">
+              <div class="invisivelDivSinais">
+                <div class="sinaisOpcoes"><input type="checkbox" name="sinaisSintomas[]" value="Interna"><label
+                    for="interna">Interna</label></div>
+                <div class="sinaisOpcoes"><input type="checkbox" name="sinaisSintomas[]" value="Externa"><label
+                    for="externa">Externa</label></div>
+              </div>
+            </div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id="" value="Hipertensão"><label
+                for="">Hipertensão</label></div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id=""
+                value="Náuseas e vomitos"><label for="">Náuseas e vomitos</label></div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id="" value="Nasoragia"><label
+                for="">Nasoragia</label></div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id="" value="Óbito"><label
+                for="">Óbito</label></div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id="" value="Otorreia"><label
+                for="">Otorreia</label></div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id="" value="Otorragia"><label
+                for="">Otorragia</label></div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id="" value="D.V.A.G.E."><label
+                for="">D.V.A.G.E.</label></div>
+            <div class="sinaisSintomas" id="parada"><input type="checkbox" name="sinaisSintomas[]" id=""
+                value="Parada"><label for="">Parada +</label></div>
+            <div class="invisivel paradaOpc" style="display: none;">
+              <div class="invisivelDivSinais">
+                <div class="sinaisOpcoes"><input type="checkbox" name="sinaisSintomas[]" value="Cardiaca"><label
+                    for="cardiaca">Cardíaca</label></div>
+                <div class="sinaisOpcoes"><input type="checkbox" name="sinaisSintomas[]" value="Respiratória"><label
+                    for="respiratoria">Respiratória</label></div>
+              </div>
+            </div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id="" value="Priaprismo"><label
+                for="">Priaprismo</label></div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id=""
+                value="Prurido na pele"><label for="">Prurido na pele</label></div>
+            <div class="sinaisSintomas" id="pupilas"><input type="checkbox" name="sinaisSintomas[]" id=""
+                value="Pupílas"><label for="">Pupílas +</label></div>
+            <div class="invisivel pupilasOpc" style="display: none;">
+              <div class="invisivelDivSinais">
+                <div class="sinaisOpcoes"><input type="checkbox" name="sinaisSintomas[]" value="Anisocoria"><label
+                    for="anisocoria">Anisocoria</label></div>
+                <div class="sinaisOpcoes"><input type="checkbox" name="sinaisSintomas[]" value="Isocoria"><label
+                    for="isocoria">Isocoria</label></div>
+              </div>
+              <div class="invisivelDivSinais">
+                <div class="sinaisOpcoes"><input type="checkbox" name="sinaisSintomas[]" value="Mioríase"><label
+                    for="mioriase">Mioríase</label></div>
+                <div class="sinaisOpcoes"><input type="checkbox" name="sinaisSintomas[]" value="Reagente"><label
+                    for="reagente">Reagente</label></div>
+              </div>
+              <div class="invisivelDivSinais">
+                <div class="sinaisOpcoes"><input type="checkbox" name="sinaisSintomas[]" value="Miose"><label
+                    for="miose">Miose</label></div>
+                <div class="sinaisOpcoes"><input type="checkbox" name="sinaisSintomas[]" value="Não reagente"><label
+                    for="nReagente">Não reagente</label></div>
+              </div>
+            </div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id="" value="Sede"><label
+                for="">Sede</label></div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id=""
+                value="Sinal de Battle"><label for="">Sinal de Battle</label></div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id=""
+                value="Sinal de guaxinim"><label for="">Sinal de guaxinim</label></div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id="" value="Sudorese"><label
+                for="">Sudorese</label></div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id="" value="Taquipneia"><label
+                for="">Taquipneia</label></div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id="" value="Tontura"><label
+                for="">Tontura</label></div>
+            <div class="sinaisSintomas"><input type="checkbox" name="sinaisSintomas[]" id="" value="Outro"><label
+                for=""><input type="text" name="" id="" placeholder="outro"></label></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button1 collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapsenine" aria-expanded="false"
+              aria-controls="panelsStayOpen-collapsenine">
+              <p class="titulomenususpenso">FORMA DE CONDUÇÃO</p>
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapsenine" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="conducao">
+                <label class="formaConducao" for="sentado">
+                  <input type="radio" name="formaConducaoSentado" id="sentado">
+                  <img src="/img/sentado.png" alt="" name="sentado">
+                  <span>Sentado</span>
+                </label>
+
+                <label class="formaConducao" for="semi">
+                  <input type="radio" name="formaConducaoSemiDeitado" id="semi">
+                  <img src="/img/semi.png" alt="" name="semi">
+                  <span>Semi-sentado</span>
+                </label>
+
+                <label class="formaConducao" for="deitado">
+                  <input type="radio" name="formaConducaoDeitado" id="deitado">
+                  <img src="/img/deitado.png" alt="" name="deitado">
+                  <span>Deitado</span>
+                </label>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button1 collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseten" aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseten">
+              <p class="titulomenususpenso">VÍTIMA ERA</p>
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseten" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="vitimaDiv"><input type="checkbox" name="checkCiclista" id="">Ciclista</div>
+              <div class="vitimaDiv"><input type="checkbox" name="checkCondutorMoto" id="">Condutor moto</div>
+              <div class="vitimaDiv"><input type="checkbox" name="checkGestante" id="">Gestante</div>
+              <div class="vitimaDiv"><input type="checkbox" name="checkPassageiroMoto" id="">Passageiro moto</div>
+              <div class="vitimaDiv"><input type="checkbox" name="checkCondutorCarros" id="">Condutor carro</div>
+              <div class="vitimaDiv"><input type="checkbox" name="checkClinico" id="">Clínico</div>
+              <div class="vitimaDiv"><input type="checkbox" name="checkTrauma" id="">Trauma</div>
+              <div class="vitimaDiv"><input type="checkbox" name="checkPasssageiroBancoDeTras" id="">Pas. Bco. trás
+              </div>
+              <div class="vitimaDiv"><input type="checkbox" name="checkPedestre" id="">Pedestre</div>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button1 collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseeleven" aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseeleven">
+              <p class="titulomenususpenso">DECISÃO TRANSPORTE</p>
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseeleven" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <fieldset class="radio-image2">
+                <div class="decisaoLinha">
+                  <label for="estavel">
+                    <input type="radio" name="estadoTransporteEstavel" id="estavel" value="estavel">
+                    <img src="/img/estavel.png" alt="emoji feliz">
+                    <p>Estável</p>
+                  </label>
+                  <label for="critico">
+                    <input type="radio" name="estadoTransporteCritico" id="critico" value="critico">
+                    <img src="/img/critico.png" alt="emoji triste">
+                    <p>Crítico</p>
+                  </label>
+                </div>
+
+                <div class="decisaoLinha">
+                  <label for="instavel">
+                    <input type="radio" name="estadoTransporteInstavel" id="instavel" value="instavel">
+                    <img src="/img/instavel.png" alt="emoji de quase choro">
+                    <p>Instável</p>
+                  </label>
+                  <label for="potencialmente">
+                    <input type="radio" name="estadoTransportePotencialmenteInstavel" id="potencialmente"
+                      value="potencialmente">
+                    <img src="/img/potencialmente.png" alt="emoji apático">
+                    <p>Potencialmente instável</p>
+                  </label>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+        </div>
+
+
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button1 collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapsetwelve" aria-expanded="false"
+              aria-controls="panelsStayOpen-collapsetwelve">
+              <p class="titulomenususpenso">PROCEDIMENTOS EFETUADOS</p>
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapsetwelve" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="linhaProced"><input name="checkAspiracao" type="checkbox">
+                <p>Aspiração</p>
+              </div>
+              <div class="linhaProced"><input name="checkAvaliacaoInicial" type="checkbox">
+                <p>Avaliação inicial</p>
+              </div>
+              <div class="linhaProced"><input name="checkAvaliacaoDirigida" type="checkbox">
+                <p>Avaliação dirigida</p>
+              </div>
+              <div class="linhaProced"><input name="checkAvaliacaoContinuada" type="checkbox">
+                <p>Avaliação continuada</p>
+              </div>
+              <div class="linhaProced"><input name="checkChaveDeRautek" type="checkbox">
+                <p>Chave de Rautek</p>
+              </div>
+              <div class="linhaProced"><input name="checkCanulaDeGuedel" type="checkbox">
+                <p>Cânula de Guedel</p>
+              </div>
+              <div class="linhaProced"><input name="checkDesobstrucaoDeVA" type="checkbox">
+                <p>Desobstrução de V.A.</p>
+              </div>
+              <div class="linhaProced"><input name="checkEmpregoDoDEA" type="checkbox">
+                <p>Emprego do D.E.A.</p>
+              </div>
+              <div class="linhaProced"><input name="checkGerenciamentoDeRiscos" type="checkbox">
+                <p>Gerenciamento de riscos</p>
+              </div>
+              <div class="linhaProced"><input name="checkLimpezaDeFerimentos" type="checkbox">
+                <p>Limpeza de ferimentos</p>
+              </div>
+              <div class="linhaProced"><input name="checkCurativos" type="checkbox">
+                <p>Curativos</p>
+              </div>
+              <div class="linhaProced"><input name="checkCompressivo" type="checkbox">
+                <p>Compressivo</p>
+              </div>
+              <div class="linhaProced"><input name="checkEncravamento" type="checkbox">
+                <p>Encravamento</p>
+              </div>
+              <div class="linhaProced"><input name="checkOcular" type="checkbox">
+                <p>Ocular</p>
+              </div>
+              <div class="linhaProced"><input name="checkQueimadura" type="checkbox">
+                <p>Queimadura</p>
+              </div>
+              <div class="linhaProced"><input name="checkSimples" type="checkbox">
+                <p>Simples</p>
+              </div>
+              <div class="linhaProced"><input name="check3Pontas" type="checkbox">
+                <p>3 pontas</p>
+              </div>
+              <div class="linhaProced"><input name="checkImbolizacoes" type="checkbox">
+                <p>Imobilizações</p>
+              </div>
+              <div class="linhaProced"><input name="checkMembroInfDir" type="checkbox">
+                <p>Membro inf. dir.</p>
+              </div>
+              <div class="linhaProced"><input name="checkMembroInfEsq" type="checkbox">
+                <p>Membro inf. esq.</p>
+              </div>
+              <div class="linhaProced"><input name="checkMembroSupDir" type="checkbox">
+                <p>Membro sup. dir.</p>
+              </div>
+              <div class="linhaProced"><input name="checkMembroSupEsq" type="checkbox">
+                <p>Membro sup. esq.</p>
+              </div>
+              <div class="linhaProced"><input name="checkQuadril" type="checkbox">
+                <p>Quadril</p>
+              </div>
+              <div class="linhaProced"><input name="checkCervical" type="checkbox">
+                <p>Cervical</p>
+              </div>
+              <div class="linhaProced"><input name="checkMacaSobreRodas" type="checkbox">
+                <p>Maca sobre rodas</p>
+              </div>
+              <div class="linhaProced"><input name="checkMacaRigida" type="checkbox">
+                <p>Maca rígida</p>
+              </div>
+              <div class="linhaProced"><input name="checkPonte" type="checkbox">
+                <p>Ponte</p>
+              </div>
+              <div class="linhaProced"><input name="checkRetiradoCapacete" type="checkbox">
+                <p>Retirado Capacete</p>
+              </div>
+              <div class="linhaProced"><input name="checkRCP" type="checkbox">
+                <p>R.C.P.</p>
+              </div>
+              <div class="linhaProced"><input name="checkRolamento90" type="checkbox">
+                <p>Rolamento 90°</p>
+              </div>
+              <div class="linhaProced"><input name="checkRolamento180" type="checkbox">
+                <p>Rolamento 180°</p>
+              </div>
+              <div class="linhaProced"><input name="checkTomadaDecisao" type="checkbox">
+                <p>Tomada decisão</p>
+              </div>
+              <div class="linhaProced"><input name="checkUsoDeCanula" type="checkbox">
+                <p>Uso de cânula</p>
+              </div>
+              <div class="linhaProced longoProced" id="procedColar"><input name="checkUsoColarTam" type="checkbox">
+                <p>Uso colar Tam:<input name="textoColarTamanho" type="text"></p>
+              </div>
+              <div class="linhaProced"><input name="checkUsoKed" type="checkbox">
+                <p>Uso Ked</p>
+              </div>
+              <div class="linhaProced"><input name="checkUsoTTF" type="checkbox">
+                <p>Uso TTF</p>
+              </div>
+              <div class="linhaProced"><input name="checkVentilacaoSuporte" type="checkbox">
+                <p>Ventilação suporte</p>
+              </div>
+              <div class="linhaProced longoProced"><input name="checkOxigenoterapia" type="checkbox">
+                <p>Oxigenoterapia <input name="textoLPM" type="text">Lpm</p>
+              </div>
+              <div class="linhaProced" id="opcoesProced"><input name="checkMeiosAuxiliares" type="checkbox">
+                <p>Meios auxiliares +</p>
+              </div>
+
+              <div id="opcoesAdicionais" style="display: none;">
+                <div class="opcoesAdcionaisChecks">
+                  <div class="opcoesAdicionaisDiv">
+                    <input type="checkbox" name="checkCelesc" id="">
+                    <label for="celesc">Celesc</label>
+                  </div>
+                  <div class="opcoesAdicionaisDiv">
+                    <input name="checkCIT" type="checkbox" id="">
+                    <label for="cit">CIT</label>
+                  </div>
+                </div>
+                <div class="opcoesAdcionaisChecks">
+                  <div class="opcoesAdicionaisDiv">
+                    <input type="checkbox" name="checkDefCivil" id="">
+                    <label for="DefCivil">Def. civil</label>
+                  </div>
+                  <div class="opcoesAdicionaisDiv">
+                    <input type="checkbox" name="checkIgpPc" id="">
+                    <label for="IgpPc">IGP/PC</label>
+                  </div>
+                </div>
+                <div class="opcoesAdcionaisChecks">
+                  <div class="opcoesAdicionaisDiv" id="opcoesProced2">
+                    <input type="checkbox" name="checkPolicia">
+                    <label for="policia">Polícia +</label>
+                  </div>
+                  <div class="opcoesAdicionaisDiv" id="opcoesProced3">
+                    <input type="checkbox" name="checkSAMU">
+                    <label for="samu">SAMU +</label>
+                  </div>
+                </div>
+
+                <div class="opcoesAdcionaisChecks2">
+                  <div class="adicionaisChecks2Linha1" style="display: none;">
+                    <div class="opcoesAdicionaisDiv2">
+                      <input type="checkbox" name="checkCivil" id="">
+                      <label for="civil">Civil</label>
+                    </div>
+                    <div class="opcoesAdicionaisDiv2">
+                      <input type="checkbox" name="checkPre" id="">
+                      <label for="pre">PRE</label>
+                    </div>
+                    <div class="opcoesAdicionaisDiv2">
+                      <input type="checkbox" name="checkMilitar" id="">
+                      <label for="militar">Militar</label>
+                    </div>
+                    <div class="opcoesAdicionaisDiv2">
+                      <input type="checkbox" name="checkPRF" id="">
+                      <label for="prf">PRF</label>
+                    </div>
+                  </div>
+
+                  <div class="adicionaisChecks2Linha2" style="display: none;">
+                    <div class="opcoesAdicionaisDiv2">
+                      <input type="checkbox" name="checkUSA" id="">
+                      <label for="civil">USA</label>
+                    </div>
+                    <div class="opcoesAdicionaisDiv2">
+                      <input name="checkUSB" type="checkbox" id="">
+                      <label for="pre">USB</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="linhaProced" id="opcoesProced"><input type="checkbox" style="width:3.2vh;margin-left: 2vw;">
+                <p style="margin-left: 2vw; margin-right: 2vw;">Outros</p>
+                <textarea name="outrosProcedimentos" id="" cols="30" rows="1"></textarea>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button1 collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapsethirteen" aria-expanded="false"
+              aria-controls="panelsStayOpen-collapsethirteen">
+              <p class="titulomenususpenso">MATERIAIS UTILIZADOS DESCARTÁVEIS</p>
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapsethirteen" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <section class="materiaisHosp">
+                <div id="titulosTopic2">
+                  <h2 class="matTopic">Material</h2>
+                  <h2 class="matTopic">Tam</h2>
+                  <h2 class="matTopic">Qtd</h2>
+                </div>
+
+                <div class="checMat">
+                  <div class="checkMatInternoDesc">
+                    <input type="checkbox" name="checkAtaduras" id="">
+                    <p>Ataduras</p>
+                  </div>
+                  <div class="colMeio2">
+                    <select name="tamanhoAtaduras" id="">
+                      <option name="tamanhoAtadurasN" value="N">N</option>
+                      <option name="tamanhoAtadurasPP" value="PP">PP</option>
+                      <option name="tamanhoAtadurasP" value="P">P</option>
+                    </select>
+                  </div>
+                  <div class="teste2"></div>
+                  <div class="qtd2"> <input name="quantidadeAtaduras" id="" type="number"
+                      oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                      maxlength="4"></div>
+                </div>
+
+                <div class="checMat">
+                  <div class="checkMatInternoDesc">
+                    <input type="checkbox" name="checkCateter" id="">
+                    <p>Cateter Tp. Óculos</p>
+                  </div>
+                  <div class="colMeio2"></div>
+                  <div class="teste2"></div>
+                  <div class="qtd2"> <input name="quantidadeCateter" id="" type="number"
+                      oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                      maxlength="3"></div>
+                </div>
+
+                <div class="checMat">
+                  <div class="checkMatInternoDesc">
+                    <input type="checkbox" name="checkCompressa" id="">
+                    <p>Compressa comum</p>
+                  </div>
+                  <div class="colMeio2"></div>
+                  <div class="teste2"></div>
+                  <div class="qtd2"> <input name="quantidadeCompressa" id="" type="number"
+                      oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                      maxlength="3"></div>
+                </div>
+
+                <div class="checMat">
+                  <div class="checkMatInternoDesc">
+                    <input type="checkbox" name="checkKit's" id="">
+                    <p>Kit's</p>
+                  </div>
+                  <div class="colMeio2">
+                    <select name="tamanhoKit's" id="">
+                      <option name="tamanhoKit'sM" value="M">M</option>
+                      <option name="tamanhoKit'sG" value="G">G</option>
+                      <option name="tamanhoKit'sOutro" value="outro">outro</option>
+                    </select>
+                  </div>
+                  <div class="teste2"></div>
+                  <div class="qtd2"> <input name="quantidadeKit's" id="" type="number"
+                      oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                      maxlength="3"></div>
+                </div>
+
+                <div class="checMat">
+                  <div class="checkMatInternoDesc">
+                    <input type="checkbox" name="checkLuvas" id="">
+                    <p>Luvas desc. (pares)</p>
+                  </div>
+                  <div class="colMeio2"></div>
+                  <div class="teste2"></div>
+                  <div class="qtd2"> <input name="quantidadeLuvas" id="" type="number"
+                      oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                      maxlength="3"></div>
+                </div>
+
+                <div class="checMat">
+                  <div class="checkMatInternoDesc">
+                    <input type="checkbox" name="checkMascara" id="">
+                    <p>Máscara desc.</p>
+                  </div>
+                  <div class="colMeio2"></div>
+                  <div class="teste2"></div>
+                  <div class="qtd2"> <input name="quantidadeMascara" id="" type="number"
+                      oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                      maxlength="3"></div>
+
+                </div>
+
+                <div class="checMat">
+                  <div class="checkMatInternoDesc">
+                    <input type="checkbox" name="checkManta" id="">
+                    <p>Manta aluminizada</p>
+                  </div>
+                  <div class="colMeio2"></div>
+                  <div class="teste2"></div>
+                  <div class="qtd2"> <input name="quantidadeManta" id="" type="number"
+                      oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                      maxlength="3"></div>
+                </div>
+
+                <div class="checMat">
+                  <div class="checkMatInternoDesc">
+                    <input type="checkbox" name="checkPas" id="">
+                    <p>Pás do DEA</p>
+                  </div>
+                  <div class="colMeio2"></div>
+                  <div class="teste2"></div>
+                  <div class="qtd2"> <input name="quantidadePas" id="" type="number"
+                      oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                      maxlength="3"></div>
+                </div>
+
+                <div class="checMat">
+                  <div class="checkMatInternoDesc">
+                    <input type="checkbox" name="checkSonda" id="">
+                    <p>Sonda de aspiração</p>
+                  </div>
+                  <div class="colMeio2"></div>
+                  <div class="teste2"></div>
+                  <div class="qtd2"> <input name="quantidadeSonda" id="" type="number"
+                      oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                      maxlength="3"></div>
+                </div>
+
+                <div class="checMat">
+                  <div class="checkMatInternoDesc">
+                    <input type="checkbox" name="checkSoro" id="">
+                    <p>Soro fisiológico</p>
+                  </div>
+                  <div class="colMeio2"></div>
+                  <div class="teste2"></div>
+                  <div class="qtd2"> <input name="quantidadeSoro" id="" type="number"
+                      oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                      maxlength="3"></div>
+                </div>
+
+                <div class="checMat">
+                  <div class="checkMatInternoDesc">
+                    <input type="checkbox" name="checkTalas" id="">
+                    <p>Talas pap.</p>
+                  </div>
+                  <div class="colMeio2">
+                    <select name="maioridadeTalas" id="">
+                      <option name="adultoTalas" value="ADULTO">Adulto</option>
+                      <option name="infantilTalas" value="INFANTIL">Infantil</option>
+                    </select>
+                  </div>
+                  <div class="teste2"></div>
+                  <div class="qtd2"> <input name="quantidadeTalas" id="" type="number"
+                      oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                      maxlength="3"></div>
+                </div>
+
+                <div class="checMat">
+                  <div class="checkMatInternoDesc">
+                    <input type="checkbox" name="checkOutroDescartaveis" id="">
+                    <input type="textarea" name="textoOutroDescartaveis" placeholder="outro" id="inputMat">
+                  </div>
+                  <div class="colMeio2">
+                    <select name="maioridadeOutroDescartaveis" id="">
+                      <option name="adultoOutroDescartaveis" value="ADULTO">Adulto</option>
+                      <option name="infantilOutroDescartaveis" value="INFANTIL">Infantil</option>
+                    </select>
+                  </div>
+                  <div class="teste2"></div>
+                  <div class="qtd2"> <input name="quantidadeOutro" id="" type="number"
+                      oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                      maxlength="3"></div>
+                </div>
+              </section>
+
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button1 collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapsefourteen" aria-expanded="false"
+                aria-controls="panelsStayOpen-collapsefourteen">
+                <p class="titulomenususpenso">MATERIAIS UTILIZADOS DEIXADOS NO HOSPITAL</p>
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapsefourteen" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                <section class="materiaisHosp">
+                  <div id="titulosTopic">
+                    <h2 class="matTopic">Material</h2>
+                    <h2 class="matTopic">Tam.</h2>
+                    <h2 class="matTopic">Qtd.</h2>
+                  </div>
+                  <div class="checMat">
+                    <div class="checkMatInterno extensop">
+                      <input type="checkbox" name="checkBaseEstabiliza" id="">
+                      <p>Base do estabiliza.</p>
+                    </div>
+                    <div class="colMeio"></div>
+                    <div class="teste2"></div>
+                    <div class="qtd"> <input name="quantidadeBaseDoEstabiliza" id="" type="number"
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                        maxlength="3"></div>
+                  </div>
+
+                  <div class="checMat">
+                    <div class="checkMatInterno">
+                      <input type="checkbox" name="checkcolar" id="">
+                      <p>Colar</p>
+                    </div>
+                    <div class="colMeio">
+                      <select name="tamanhoColar" id="">
+                        <option name="colarN" value="N">N</option>
+                        <option name="colarPP" value="PP">PP</option>
+                        <option name="colarP" value="P">P</option>
+                      </select>
+                    </div>
+                    <div class="teste2"></div>
+                    <div class="qtd"> <input name="quantidadeColar" id="" type="number"
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                        maxlength="3"></div>
+                  </div>
+
+                  <div class="checMat">
+                    <div class="checkMatInterno">
+                      <input type="checkbox" name="checkcolar2" id="">
+                      <p>Colar</p>
+                    </div>
+                    <div class="colMeio">
+                      <select name="tamanhoColar2" id="">
+                        <option name="colarM2" value="M">M</option>
+                        <option name="colarG2" value="G">G</option>
+                        <option name="colarOutro2" value="outro">outro</option>
+                      </select>
+                    </div>
+                    <div class="teste2"></div>
+                    <div class="qtd"> <input name="quantidadeColar2" id="" type="number"
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                        maxlength="3"></div>
+                  </div>
+
+                  <div class="checMat">
+                    <div class="checkMatInterno extensop">
+                      <input type="checkbox" name="checkColar2" id="">
+                      <p>Coxins estabiliza.</p>
+                    </div>
+                    <div class="colMeio"></div>
+                    <div class="teste2"></div>
+                    <div class="qtd"> <input name="quantidadeCoxins" id="" type="number"
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                        maxlength="3"></div>
+                  </div>
+
+                  <div class="checMat">
+                    <div class="checkMatInterno">
+                      <input type="checkbox" name="checkcoxins" id="">
+                      <p>KED</p>
+                    </div>
+                    <div class="colMeio">
+                      <select name="maioridadeKed" id="">
+                        <option name="adultoKed" value="ADULTO">Adulto</option>
+                        <option name="infantilKed" value="INFANTIL">Infantil</option>
+                      </select>
+                    </div>
+                    <div class="teste2"></div>
+                    <div class="qtd"> <input name="quantidadeKed" id="" type="number"
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                        maxlength="3"></div>
+                  </div>
+
+                  <div class="checMat">
+                    <div class="checkMatInterno">
+                      <input type="checkbox" name="checkMaca" id="">
+                      <p>Maca rígida</p>
+                    </div>
+                    <div class="colMeio"></div>
+                    <div class="teste2"></div>
+                    <div class="qtd"> <input name="quantidaDeMaca" id="" type="number"
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                        maxlength="3"></div>
+
+                  </div>
+
+                  <div class="checMat">
+                    <div class="checkMatInterno">
+                      <input type="checkbox" name="checkTiranteAranha" id="">
+                      <p>Tirante aranha</p>
+                    </div>
+                    <div class="colMeio"></div>
+                    <div class="teste2"></div>
+                    <div class="qtd"> <input name="quantidadeTiranteAranha" id="" type="number"
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                        maxlength="3"></div>
+                  </div>
+
+                  <div class="checMat">
+                    <div class="checkMatInterno extensop">
+                      <input type="checkbox" name="checkTiranteCabeca" id="">
+                      <p>Tirante de cabeça</p>
+                    </div>
+                    <div class="colMeio"></div>
+                    <div class="teste2"></div>
+                    <div class="qtd"> <input name="quantidadeTiranteCabeca" id="" type="number"
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                        maxlength="3"></div>
+                  </div>
+
+                  <div class="checMat">
+                    <div class="checkMatInterno">
+                      <input type="checkbox" name="checkTiranteCabeca" id="">
+                      <p>Cânula</p>
+                    </div>
+                    <div class="colMeio"></div>
+                    <div class="teste2"></div>
+                    <div class="qtd"> <input name="quantidaDeCanula" id="" type="number"
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                        maxlength="3"></div>
+                  </div>
+
+                  <div class="checMat">
+                    <div class="checkMatInterno">
+                      <input type="checkbox" name="checkCanula" id="">
+                      <input type="textarea" name="outroMaterial" placeholder="outro" id="inputMat">
+                    </div>
+
+                    <div class="colMeio">
+                      <select name="maioridadeOutro" id="">
+                        <option value="adultoOutro">Adulto</option>
+                        <option value="InfantilOutro">Infantil</option>
+                      </select>
+                    </div>
+                    <div class="teste2"></div>
+                    <div class="qtd"> <input name="quantidadeOutro" id="" type="number"
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                        maxlength="3"></div>
+                  </div>
+                </section>
+
+              </div>
+            </div>
+          </div>
+          </div>
+
+          <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button1 collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapsefifteen" aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapsefifteen">
+                  <p class="titulomenususpenso">AVALIAÇÃO DA CINEMÁTICA</p>
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapsefifteen" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <table style="width: 90%; margin: auto;" class="avaliaCine">
+                    <tr>
+                      <th></th>
+                      <th class="cinemaSimNao">Sim</th>
+                      <th class="cinemaSimNao">Não</th>
+                    </tr>
+                    <tr>
+                      <td>Distúrbio de comportamento</td>
+                      <td><input type="checkbox" name="cinematica" id="" value="Distúrbio de comportamento"></td>
+                      <td><input type="checkbox" name="disturbiodecomportamentoNao" id=""></td>
+                    </tr>
+                    <tr>
+                      <td>Encontrado de capacete</td>
+                      <td><input type="checkbox" name="cinematica" id="" value="Encontrado de capacete"></td>
+                      <td><input type="checkbox" name="encontradodecapaceteNao" id=""></td>
+                    </tr>
+                    <tr>
+                      <td>Encontrado de cinto</td>
+                      <td><input type="checkbox" name="cinematica" id="" value="Encontrado de cinto"></td>
+                      <td><input type="checkbox" name="encontradodecintoNao" id=""></td>
+                    </tr>
+                    <tr>
+                      <td>Para-brisas avariado</td>
+                      <td><input type="checkbox" name="cinematica" id="" value="Para-brisas avariado"></td>
+                      <td><input type="checkbox" name="parabrisasavariadoNao" id=""></td>
+                    </tr>
+                    <tr>
+                      <td>Caminhando na cena</td>
+                      <td><input type="checkbox" name="cinematica" id="" value="Caminhando na cena"></td>
+                      <td><input type="checkbox" name="caminhandonacenaNao" id=""></td>
+                    </tr>
+                    <tr>
+                      <td>Painel avariado</td>
+                      <td><input type="checkbox" name="cinematica" id="" value="Painel avariado"></td>
+                      <td><input type="checkbox" name="painelavariadoNao" id=""></td>
+                    </tr>
+                    <tr>
+                      <td>Volante torcido</td>
+                      <td><input type="checkbox" name="cinematica" id="" value="Volante torcido"></td>
+                      <td><input type="checkbox" name="volantetorcidoNao" id=""></td>
+                    </tr>
+                  </table>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+            <div class="accordion" id="accordionPanelsStayOpenExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button1 collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapsesixteen" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapsesixteen">
+                    <p class="titulomenususpenso">OBJETOS RECOLHIDOS</p>
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapsesixteen" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    <textarea name="objetosRecolhidos" id="" cols="30" rows="5" style="width: 100%;"></textarea>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+              <!-- heitor -->
+              <div class="observacoes">
+                <label for="observacoes"><img src="../img/relatorio.svg" alt="">OBSERVAÇÕES
+                  IMPORTANTES</label>
+                <textarea class="caixa_de_texto_gestacional" name="observacoes" id="" cols="30" rows="10"></textarea>
+              </div>
+
+              <div class="serviceTeam">
+                <h4><img src="../img/equipe.svg" alt="">EQUIPE DE ATENDIMENTO</h4>
+
+                <div class="squadCamp gapCamp">
+                  <label for="m">M:</label>
+                  <input type="text" name="m" id="">
+                </div>
+
+                <div class="squadCamp gapCamp">
+                  <label for="s1">S1:</label>
+                  <input type="text" name="s1" id="">
+                </div>
+
+                <div class="squadCamp gapCamp">
+                  <label for="s2">S2:</label>
+                  <input type="text" name="s2" id="">
+                </div>
+
+                <div class="squadCamp gapCamp">
+                  <label for="s3">S3:</label>
+                  <input type="text" name="s3" id="">
+                </div>
+
+                <div class="teamNames gapCamp">
+                  <label for="demandante"><img src="../img/demandante.svg" alt=""> DEMANDANTE:</label>
+                  <input type="text" name="demandante" id="dem-equi">
+                </div>
+
+                <div class="teamNames gapCamp">
+                  <label for="team"><img src="../img/bombeiro.svg" alt=""> EQUIPE:</label>
+                  <input type="text" name="team" id="dem-equi">
+                </div>
+              </div>
+
+              <div class="identifications">
+                <div class="espacolinha">
+                  <div>
+                    <label for="usb">Nº USB:</label>
+                    <input type="text" name="usb" id="">
+                  </div>
+                  <div class="check">
+                    <label for="ir">CÓD. IR:</label>
+                    <input type="checkbox" name="ir" id="">
+                  </div>
+                </div>
+
+                <div class="espacolinha">
+                  <div><label for="ocorr">Nº OCORR.:</label>
+                    <input type="text" name="ocorr" id="">
+                  </div>
+                  <div class="check"> <label for="ps">CÓD. PS:</label>
+                    <input type="checkbox" name="ps" id="">
+                  </div>
+                </div>
+
+                <div class="desp espacolinha">
+                  <div> <label for="desp">DESP.:</label>
+                    <input type="text" name="desp">
+                  </div>
+                  <div><label for="kmfinal">KM FINAL:</label>
+                    <input type="text" name="kmfinal">
+                  </div>
+
+                </div>
+                <div class="h-s espacolinha">
+                  <div style="display:flex; align-items: baseline;">
+                    <label for="h.ch">H.CH.:</label>
+                    <input type="text" name="h.ch">
+                  </div>
+                  <div style="display:flex; align-items: baseline;">
+                    <label for="sia/sus">SIA/SUS.:</label>
+                    <input id="sia_sus" type="text" name="sia/sus">
+                  </div>
+                </div>
+                <button type="submit" id="salvarOcorrencia">Salvar ocorrencia</button>
+              </div>
+            
+
+              <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+                crossorigin="anonymous"></script>
+              <script src="../scripts/ocorrencia.js"></script>
+
+</body>
+
+</html>

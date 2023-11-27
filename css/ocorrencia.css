@@ -1,0 +1,1588 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;500;700&display=swap');
+
+body{
+  color: black;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#hugopai {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  width: 69%;
+}
+
+
+
+#imagemTitulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+#logomedico{
+  width: 571px;
+  height: 175px;
+}
+/* Nova */
+#novaocorrencia {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Nova */
+#novaocorrencia {
+  color: #ED1D25;
+  text-align: center;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  font-family: 'Goldman', cursive;
+}
+
+/* data */
+
+.botaodata{
+
+border-radius: 30px;
+width: 100px;
+background-color: #136cfb;
+margin-top: 5%;
+color: white;
+
+}
+
+#inputhora{
+
+margin-left: 3%;
+
+}
+/* tópicos iniciais */
+.topicosiniciais {
+
+  color: #090909;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-left: 2%;
+}
+
+#topico_nome{
+display: flex;
+margin-top: 3%;
+}
+
+#topico_cpf{
+display: flex;
+margin-left: 1%;
+}
+
+.sexo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+} 
+
+/* icones */
+.icones {
+  width: 55px;
+  height: 55px;
+}
+.iconepessoa{
+  width: 17%;
+}
+
+.iconepessoa{
+    width: 10%;
+}
+
+#inputs{
+  border: none;
+  border-bottom: solid black 3px;
+  width: 350px;
+}
+
+#inputcpf{
+  border: none;
+  border-bottom: solid black 3px;
+  width: 400px;
+}
+#inputtelefone{
+  border: none;
+  border-bottom: solid black 3px;
+  width: 320px;
+}
+#inputidade{
+  border: none;
+  border-bottom: solid black 3px;
+  width: 380px;
+}
+
+/* data */
+
+.date-input {
+  display: flex;
+  gap: 10px;
+}
+
+#datainput{
+  width: 300px;
+}
+
+.nome-input {
+  display: flex;
+  align-items: center;
+ 
+}
+
+.RG-input{
+  display: flex;
+  align-items: center;
+  margin-top: 5%;
+ 
+}
+
+.date-input span {
+  font-size: 30px;
+  margin: 0 5px;
+  font-weight: 600;
+}
+
+#topico-sexo{
+  color: #090909;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 5%;
+
+}
+
+#generos{
+ 
+  font-size: 30px;
+}
+
+#bolinhas{
+  width: 25px;
+  height: 25px;
+  border: 3px solid black;
+ 
+}
+
+.accordion-header {
+  border: solid #136cfb 10px;
+  border-radius: 8px;
+  background-color: #136cfb;
+  width: 550px;
+}
+
+.accordion-button1 {
+  position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: var(--bs-accordion-btn-padding-y) var(--bs-accordion-btn-padding-x);
+    font-size: 20px;
+    border: none;
+    color: var(--bs-accordion-btn-color);
+    text-align: left;
+    background-color: #136cfb;
+    border-radius: 50;
+    overflow-anchor: none;
+    transition: var(--bs-accordion-transition);
+}
+
+.accordion-button1 p {
+  color: white;
+}
+
+.titulomenususpenso{
+
+  color: #090909;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+
+}
+
+.topico_nome_acompanhante{
+  
+  color: #090909;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.botaoderelação{
+  border-radius: 15px;
+  background-color: white; /* Cor de fundo padrão */
+  border: solid black 2px;
+  cursor: pointer;
+  color: black;
+  width: 30%;
+  
+}
+
+
+.botaoderelação.selecionado {
+  background-color: #136cfb; /* Cor de fundo quando selecionado */
+}
+
+
+.caixa_de_texto_anamnese{
+  width: 480px;
+  border: 1px solid black;
+
+}
+
+.caixa_de_texto_gestacional{
+  width: 290px;
+  border: 1px solid black;
+
+}
+
+.horario{
+
+border: 1px solid black;
+margin-left: 30%;
+margin-top: 2%;
+
+}
+
+.container {
+  width: 700px;
+  margin: 50px auto;
+  padding: 10px;
+  background-color: rgb(228, 228, 228);
+  border-radius: 10px;
+  margin-top: 1%;
+}
+
+.button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button p {
+  color: black;
+  font-family: 'Inter', sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.button img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+.text {
+  display: none;
+  padding: 10px;
+}
+
+.expand.show {
+  display: block;
+}
+
+.rotate {
+  transform: rotate(90deg);
+}
+
+.observacoes{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  margin-top: 5%;
+}
+.observacoes label{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.observacoes textarea{
+  width: 70%;
+  margin: auto;
+  margin-top: 2%;
+}
+
+.serviceTeam{
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+  text-align: center;
+  margin-top: 2%;
+  margin: auto;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+}
+
+.serviceTeam h4{
+  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -8%;
+  margin-top: 0;
+}
+.serviceTeam h4 img{
+  margin-right: -7%;
+  margin-left: -7%;
+}
+.serviceTeam label{
+  font-size: 22px;
+}
+.serviceTeam input{
+ border: none;
+ border-bottom: solid black 1px;
+}
+
+.teamNames{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+}
+.teamNames label{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1%;
+}
+.teamNames label img{
+  margin-right: 1%;
+}
+.squadCamp input{
+  width: 88%;
+}
+
+.gapCamp{
+  margin-top: 5%;
+}
+
+.identifications{
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 71%;
+  margin: auto;
+  margin-top: 5%;
+  font-size: 22px;
+  font-family: 'inter', sans-serif;
+  font-weight: bold;
+}
+
+#dem-equi{
+  margin-top: 1%;
+  border: 1px solid black;
+  border-radius: 6px;
+  height: 2vh;
+}
+
+.identifications input{
+  border: none;
+  border-bottom: solid black 1px;
+}
+.espacolinha{
+  display: flex;
+  justify-content: space-between;
+  margin-top:4%;
+}
+
+.text input {
+  background: none;
+  border: none;
+  border-bottom: solid black 1px;
+}
+
+.text label {
+  font-size: 25px;
+}
+
+.relacao {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+/* Estilos para os botões de input */
+.category-label {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+.desp{
+  display: flex;
+  justify-content: space-between;
+}
+.h-s{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.check{
+  display: flex;
+ 
+  margin-right: 0;
+}
+
+input[type=checkbox]{
+ width: 30%;
+}
+
+/* Imagens de tipo de ocorencia */
+
+.radio-image {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.radio-image label>input {
+  visibility: hidden;
+}
+
+.radio-image label>input+img {
+  cursor: pointer;
+  border: 4px solid #000000;
+  border-radius: 15px;
+  padding: 10px;
+  width: 90%;
+}
+
+.radio-image label>input:checked+img {
+  border: 4px solid #136cfb;
+}
+
+.radio-image label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+}
+.linha01 {
+  display: flex;
+}
+
+.vitimaDiv{
+  display: flex;
+  margin-top: 2%;
+  margin: 2% auto 0 auto;
+}
+.vitimaDiv input[type='checkbox']{
+  height: 3vh;
+}
+
+/*                */
+.radio-image2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.radio-image2 label>input {
+  visibility: hidden;
+}
+.radio-image2 label>input+img {
+  cursor: pointer;
+  border: 4px solid #EEE;
+  border-radius: 15px;
+  padding: 10px;
+}
+.radio-image2 label>input:checked+img {
+  border: 4px solid #3F51B5;
+}
+.radio-image2 label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.decisaoLinha {
+  display: flex;
+}
+.decisaoLinha label{
+  width: 30vw;
+}
+.decisaoLinha img{
+  width: 80%;
+}
+.decisaoLinha p{
+  height: 12%;
+  text-align: center;
+}
+
+
+.accordion-item{
+  max-width: 70vw;
+  margin: auto;
+  margin-top: 5%;
+  background-color: #F1F1F1;
+}
+
+.accordion-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: var(--bs-accordion-btn-padding-y) var(--bs-accordion-btn-padding-x);
+  font-size: 20px;
+  border: 2px solid black;
+  color: var(--bs-accordion-btn-color);
+  text-align: left;
+  background-color: var(--bs-accordion-btn-bg);
+  border-radius: 50;
+  overflow-anchor: none;
+  transition: var(--bs-accordion-transition);
+}
+
+.aboCol1{
+  display: flex;
+  align-items: center;
+}
+.aboCol1 img{
+  width: 85%;
+}
+
+
+#imagemglasgow{
+margin-left: 35%;
+}
+#imagemglasgow2{
+margin-top: 50%;
+margin-left: 35%;
+}
+#imagemglasgow3{
+margin-top: 70%;
+margin-left: 35%;
+}
+
+.accordion-body {
+  padding: var(--bs-accordion-body-padding-y) var(--bs-accordion-body-padding-x);
+  background-color: #d3e3ff;
+}
+
+.aberturaOcular{
+  display: flex;
+}
+.content-aboCol{
+  display: flex;
+  padding: 0px 10px  ;
+}
+.idadeGlasgow{
+  text-align: center;
+  font-weight: bold;
+}
+.box-glasgow{
+  padding: 15px 0;
+}
+.verbalImg{
+  width: 80%;
+}
+
+#botoes{
+  display: flex;
+  justify-content: center;
+  margin-left: 100px;
+  margin-top: 15%;
+  width: 300px;
+  height: 20px;
+}
+
+#botoespai{
+ display: flex;
+ margin-left: 15%;
+ margin-top: 10%;
+}
+
+.botaoPai {
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 30px;
+  width: 150px;
+  color: rgb(0, 0, 0);
+  height: 65px;
+}
+
+.botaoPai:nth-child(1).selected {
+  background-color: #00b7ff;
+}
+
+.botaoPai:nth-child(2).selected {
+  background-color: #00b7ff;
+}
+
+.botaoPai2 {
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 30px;
+  width: 150px;
+  color: white;
+  height: 65px;
+}
+
+.botaoPai2:nth-child(1).selected {
+  background-color: #02005C;
+}
+
+.botaoPai2:nth-child(2).selected {
+  background-color: #02005C;
+}
+
+.grupoBotoes {
+  display: none;
+}
+#grupoBotoes1 {
+width: 600px;
+
+}
+#grupoBotoes11 {
+  width: 500px;
+
+}
+#grupoBotoes111 {
+display: flex;
+flex-direction: column;
+}
+#grupoBotoes222 {
+height: 200px;
+}
+.dentroBotoes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-left: 10%;
+}
+.dentroBotoes2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  left: 250px;
+}
+.dentroBotoes3 {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  top: 220px;
+  right: 140px;
+  height: 150px;
+}
+.dentroBotoes4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  top: 380px;
+  right: 550px;
+}
+
+.accordion-body1 {
+  height: 2000px;
+}
+
+#grupoBotoes2 {
+position: relative;
+width: 600px;
+
+}
+#somatotal{
+  position: relative;
+
+  left: 230px;
+}
+
+.grupoBotoes.active {
+  display: flex;
+  gap: 20px;
+  animation: fadeIn 1s;
+}
+
+.botao {
+  padding: 8px 15px;
+  border: 3px solid transparent;
+  transition: border-color 0.3s;
+  cursor: pointer;
+  border-radius: 30px;
+  text-align: center;
+  color: white;
+}
+
+.botao.selected {
+  border-color: black;
+}
+.botaodois {
+  padding: 8px 15px;
+  border: 3px solid transparent;
+  transition: border-color 0.3s;
+  cursor: pointer;
+  border-radius: 30px;
+  text-align: center;
+  color: white;
+}
+
+.botaodois.selected {
+  border-color: black;
+}
+
+.botao1{
+  background-color: #0400ff;
+  
+}
+.botao2{
+  background-color: #0014C7;
+}
+.botao3{
+  background-color: #00A3C7;
+}
+.botao4{
+  background-color: #00F0FF;
+}
+.botao5{
+  background-color: #000e91;
+}
+.botao6{
+  background-color: #000214;
+}
+
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+
+  to {
+      opacity: 1;
+  }
+}
+
+
+.svTopico{
+  display: flex;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+.svTopico input{
+  width: 12%;
+  margin: 0 8px;
+}
+
+.aboCol1{
+  display: flex;
+  align-items: center;
+}
+.aboCol1 img{
+  width: 85%;
+}
+.aberturaOcular{
+  display: flex;
+}
+.content-aboCol{
+  display: flex;
+  padding: 0px 10px  ;
+}
+.idadeGlasgow{
+  text-align: center;
+  font-weight: bold;
+}
+.box-glasgow{
+  padding: 15px 0;
+}
+
+
+/* abertura ocular */
+
+#espontanea{
+  display: flex;
+  gap: 95px;
+}
+#comandoverbal{
+  display: flex;
+  gap: 90px;
+}
+#estimulodoloroso{
+  display: flex;
+  gap: 90px;
+}
+#nenhuma{
+  display: flex;
+  gap: 115px;
+}
+
+/* resposta verbal */
+
+#orientado{
+  display: flex;
+  gap: 170px;
+}
+#confuso{
+  display: flex;
+  gap: 190px;
+}
+#palavrasinapropriadas{
+  display: flex;
+  gap: 30px;
+}
+#palavrasincompreensiveis{
+  display: flex;
+  gap: 80px;
+}
+
+#nenhuma{
+  display: flex;
+  gap: 170px;
+}
+
+
+.svTopico{
+  display: flex;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+.svTopico input{
+  width: 12%;
+  margin: 0 8px;
+}
+
+
+.avaliaCine input{
+  width: 100%;
+}
+
+#titulosTopic{
+  display: flex;
+  justify-content: space-around;
+}
+.qtd{
+  width: 30%;
+  display: flex;
+  justify-content: center;
+}
+.materiaisHosp input, select{
+  border: 1px solid black;
+}
+.materiaisHosp input[type=number]{
+  width: 50%;
+}
+.materiaisHosp input[type=text]{
+  width: 100%;
+}
+.checMat{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6vh;
+}
+
+#titulosTopic2{
+  display: flex;
+  justify-content: space-between;
+  width:70%;
+  margin: auto;
+}
+.checkMatInternoDesc{
+  display: flex;
+  width: 55%;
+  border-right: 1px solid black;
+  height: 100%;
+}
+.checkMatInternoDesc input{
+  width: 12%;
+}
+.checkMatInternoDesc p{
+ margin-left: 4%;
+ margin: auto;
+}
+.colMeio2{
+  width: 20%; 
+}
+.colMeio2 select{
+  width: 90%;
+  margin-left: 5%;
+}
+
+
+.qtd2{
+  width: 35%;
+  display: flex;
+  justify-content: center;
+}
+.checkMatInterno{
+  display: flex;
+  width: 40%;
+  height: 100%;
+  border-right: 1px solid black;
+}
+.checkMatInterno p{
+  margin: auto;
+  text-align: center;
+}
+.checkMatInterno input{
+  width: 4vw;
+  height: 4vw;
+  margin: auto 0 auto 0;
+}
+.extensop input{
+  width: 5vw;
+  margin-left: 0;
+}
+.colMeio{
+  width: 20%;
+}
+.colMeio select{
+  width: 100%;
+}
+.teste2{
+ height: 100%;
+ 
+  border-right: 1px solid black;
+}
+#inputMat{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+.linhaProced{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin-top: 5%;
+  width: 85%;
+}
+.linhaProced p{
+  display: flex;
+  margin: auto 
+}
+.linhaProced input[type=checkbox]{
+  width: 5vh;
+}
+.linhaProced p input{
+  width: 20%;
+  border: none;
+  border-bottom: 1px solid black;
+}
+.longoProced input[type=checkbox]{
+ height: 2.75vh;
+ margin-left: 1vw;
+}
+.longoProced p{
+  display: flex;
+  justify-content: center;
+}
+#procedColar input[type=checkbox]{
+  margin-left: 0.60vw;
+}
+
+
+.opcoesAdcionaisChecks{
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+.opcoesAdicionaisDiv{
+  display: flex;
+  width: 60%;
+  margin-top: 2%;
+}
+.opcoesAdcionaisChecks2{
+  display: flex;
+  justify-content: space-around;
+  width:80%;
+  margin: auto;
+}
+.adicionaisChecks2Linha1 {
+  width: 30%;
+}
+.adicionaisChecks2Linha2{
+  width: 30%;
+}
+
+
+.conducao{
+  display: flex;
+}
+.formaConducao{
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  align-items: center;
+}
+.formaConducao img{
+  width: 70%;
+  height: 80%;
+}
+
+.conducao label.formaConducao {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.conducao label.formaConducao input {
+  display: none;
+}
+.conducao label.formaConducao img {
+  border: 4px solid #000000;
+  border-radius: 15px;
+  margin-right: 10px;
+}
+.conducao label.formaConducao input:checked + img {
+  border: 4px solid #3F51B5;
+}
+
+.sinaisSintomas{
+  display: flex;
+  margin-top: 5%;  
+}
+
+.sinaisSintomas input[type=text]{
+  width: 90%;
+}
+.invisivel{
+ 
+}
+.invisivelDivSinais{
+  display: flex;
+  justify-content: space-around;
+  width: 75%;
+  margin: auto;
+  margin-top: 4%;
+}
+.invisivelDivSinais2{
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  margin: auto;
+  margin-top: 4%;
+}
+.sinaisOpcoes{
+  display: flex;
+  align-items: baseline;
+  width: 100%;
+}
+.sinaisOpcoes label{
+  width: 100%;
+}
+.sinaisOpcoes input[type="checkbox"]{
+  transform: scale(2.0); /* Aumenta o tamanho do checkbox em 1.5 vezes */
+  margin-right: 10px; /* Espaçamento entre o checkbox e o texto */
+}
+
+.problemasSusp{
+  display: flex;
+  margin-top: 5%;  
+}
+.problemasSusp input[type="text"]{
+  width: 40%;
+  margin-left: 4%;
+}
+
+/* Corpo */
+
+#corpoCompleto {
+  display: flex;
+  gap: 100px;
+  width: 500px;
+  justify-content: center;
+  align-items: center;
+}
+
+#corpoFrente {
+  width: 1000px;
+}
+
+#corpoVerso {
+  width: 1000px;
+}
+
+#corpoCompleto button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+#corpoCompleto figure {
+  border: none;
+  margin: 0px;
+}
+
+.imagem1 {
+  position: relative;
+  top: 50px;
+}
+
+.imagem2 {
+  position: relative;
+  top: 38px;
+  left: 8px;
+}
+
+.imagem3 {
+  position: relative;
+  top: 38px;
+  right: 25px;
+}
+
+.imagem4 {
+  position: relative;
+  bottom: 15px;
+  right: 50px;
+}
+
+.imagem5 {
+  position: relative;
+  bottom: 17px;
+  right: 66px;
+}
+
+.imagem6 {
+  position: relative;
+  bottom: 16px;
+  right: 66px;
+}
+
+.imagem7 {
+  position: relative;
+  bottom: 240px;
+  left: 88px;
+}
+
+.imagem8 {
+  position: relative;
+  bottom: 242px;
+  left: 88px;
+}
+
+.imagem9 {
+  position: relative;
+  bottom: 241px;
+  left: 98px;
+}
+
+.imagem10 {
+  position: relative;
+  bottom: 410px;
+  right: 20px;
+}
+
+.imagem11 {
+  position: relative;
+  bottom: 425px;
+  right: 20px;
+}
+
+.imagem12 {
+  position: relative;
+  bottom: 432px;
+  right: 7px;
+}
+
+.imagem13 {
+  position: relative;
+  bottom: 435px;
+  right: 8px;
+}
+
+.imagem14 {
+  position: relative;
+  bottom: 445px;
+  right: 8px;
+}
+
+.imagem15 {
+  position: relative;
+  bottom: 742px;
+  left: 32px;
+}
+
+.imagem16 {
+  position: relative;
+  bottom: 749px;
+  left: 32px;
+}
+
+.imagem17 {
+  position: relative;
+  bottom: 752px;
+  left: 32px;
+}
+
+.imagem18 {
+  position: relative;
+  bottom: 762px;
+  left: 32px;
+}
+
+.imagem19 {
+  position: relative;
+  top: 10px;
+}
+
+.imagem20 {
+  position: relative;
+  top: 8px;
+  left: 8px;
+}
+
+.imagem21 {
+  position: relative;
+  top: 8px;
+  right: 25px;
+}
+
+.imagem22 {
+  position: relative;
+  bottom: 65px;
+  right: 55px;
+}
+
+.imagem23 {
+  position: relative;
+  bottom: 65px;
+  right: 64px;
+}
+
+.imagem24 {
+  position: relative;
+  bottom: 67px;
+  right: 66px;
+}
+
+.imagem25 {
+  position: relative;
+  bottom: 290px;
+  left: 93px;
+}
+
+.imagem26 {
+  position: relative;
+  bottom: 290px;
+  left: 90px;
+}
+
+.imagem27 {
+  position: relative;
+  bottom: 292px;
+  left: 104px;
+}
+
+.imagem28 {
+  position: relative;
+  bottom: 455px;
+  right: 16px;
+}
+
+.imagem29 {
+  position: relative;
+  bottom: 453px;
+  right: 19px;
+}
+
+.imagem30 {
+  position: relative;
+  bottom: 450px;
+  right: 20px;
+}
+
+.imagem31 {
+  position: relative;
+  bottom: 450px;
+  right: 8px;
+}
+
+.imagem32 {
+  position: relative;
+  bottom: 458px;
+  right: 10px;
+}
+
+.imagem33 {
+  position: relative;
+  bottom: 458px;
+  right: 8px;
+}
+
+.imagem34 {
+  position: relative;
+  bottom: 712px;
+  left: 32px;
+}
+
+.imagem35 {
+  position: relative;
+  bottom: 712px;
+  left: 31px;
+}
+
+.imagem36 {
+  position: relative;
+  bottom: 720px;
+  left: 30px;
+}
+
+.imagem37 {
+  position: relative;
+  bottom: 720px;
+  left: 32px;
+}
+
+path {
+  fill: #f1cbb2;
+}
+
+/* Frente */
+
+#cabeca path:hover {
+  stroke: red;
+}
+
+#pescoco path:hover {
+  stroke: greenyellow;
+}
+
+#peito path:hover {
+  stroke: yellow;
+}
+
+#ombroe path:hover {
+  stroke: blue;
+}
+
+#bracoe path:hover {
+  stroke: blue;
+}
+
+#maoe path:hover {
+  stroke: blue;
+}
+
+#ombrod path:hover {
+  stroke: blue;
+}
+
+#bracod path:hover {
+  stroke: blue;
+}
+
+#maod path:hover {
+  stroke: blue;
+}
+
+#tronco path:hover {
+  stroke: red;
+}
+
+#coxae path:hover {
+  stroke: red;
+}
+
+#joelhoe path:hover {
+  stroke: red;
+}
+
+#panturrilhae path:hover {
+  stroke: red;
+}
+
+#pee path:hover {
+  stroke: red;
+}
+
+#coxad path:hover {
+  stroke: red;
+}
+
+#joelhod path:hover {
+  stroke: red;
+}
+
+#panturrilhad path:hover {
+  stroke: red;
+}
+
+#ped path:hover {
+  stroke: red;
+}
+
+/* Verso */
+
+#nuca path:hover {
+  stroke: red;
+}
+
+#pescocov path:hover {
+  stroke: greenyellow;
+}
+
+#costas path:hover {
+  stroke: yellow;
+}
+
+#ombroev path:hover {
+  stroke: blue;
+}
+
+#bracoev path:hover {
+  stroke: blue;
+}
+
+#maoev path:hover {
+  stroke: blue;
+}
+
+#ombrodv path:hover {
+  stroke: blue;
+}
+
+#bracodv path:hover {
+  stroke: blue;
+}
+
+#maodv path:hover {
+  stroke: blue;
+}
+
+#troncov path:hover {
+  stroke: red;
+}
+
+#bunda path:hover {
+  stroke: red;
+}
+
+#coxaev path:hover {
+  stroke: red;
+}
+
+#joelhoev path:hover {
+  stroke: red;
+}
+
+#panturrilhaev path:hover {
+  stroke: red;
+}
+
+#peev path:hover {
+  stroke: red;
+}
+
+#coxadv path:hover {
+  stroke: red;
+}
+
+#joelhodv path:hover {
+  stroke: red;
+}
+
+#panturrilhadv path:hover {
+  stroke: red;
+}
+
+#pedv path:hover {
+  stroke: red;
+}
+
+/* Caixa de opções */
+
+
+/* Estilo para a janela modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilo para o conteúdo da janela modal */
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: fixed;
+  top: 40%;
+  left: 38%;
+  background-color: rgb(187, 187, 187);
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  width: 400px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+
+}
+
+.modal-content button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+}
+
+.modal-content button:hover {
+  background-color: rgb(255, 255, 0);
+  transform: scale(1.05);
+  transition: 0.2s ease;
+}
+
+.modal-content img {
+  width: 40px;
+}
+
+

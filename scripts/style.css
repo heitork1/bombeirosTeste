@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman&display=swap');
+
+
+body {
+    background-color: #090909;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(mapa-removebg-preview\ \(1\)\ 1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#inicio img {
+    width: 230px;
+}
+
+#titulo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#titulo h1 {
+    margin-bottom: 0px;
+    color: #ED1D25;
+    text-align: center;
+    font-family: 'Goldman', cursive;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: auto;
+}
+
+#titulo h2 {
+    margin-top: 0px;
+    color: #FFF;
+    font-family: Goldman;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    margin-top: 20px;
+}
+
+.form-group input {
+    width: 300px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 5px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    padding-left: 15px;
+}
+
+.form-group label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+.form-group button {
+    width: 190px;
+    height: 40px;
+    background-color: #ED1D25;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    scale: 1.05;
+    transition: all 0.5s;
+}
+
+@media (max-width: 999px) {
+    .form-group input { 
+        width: 400px;
+        height: 40px;
+    }
+}
+
+#cadastrarEquipe{
+
+margin-top: 5%;
+
+}
+

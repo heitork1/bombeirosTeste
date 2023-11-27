@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corpo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="corpoCompleto">
+
+        <div class="corpoFrente">
+
+            <!-- Cabeça -->
+
+            <figure class="imagem1">
+                <button id="cabeca" onclick="mostrarModal('cabeca')">
+                    <!-- Adicione este elemento de imagem ao seu corpo HTML com um ID específico -->
+                    <img id="" src="" alt="">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="59" height="72" viewBox="0 0 59 72" fill="none">
+                        <path
+                            d="M28.9998 1C6.25031 3.25822 2.52496 10.8788 7.99981 33C-3.06877 27.7337 1.23598 37.85 9.4999 52.5C17.7638 67.15 18.3627 67.9068 28.9998 70C40.0271 67.7608 44.2174 64.1021 46.9998 52C57.1166 38.6829 62.6427 28.5564 50.9998 33C54.9529 9.42403 49.9395 2.55682 28.9998 1Z"
+                            fill="white" stroke="black" stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <!-- Pescoço -->
+
+            <figure class="imagem2">
+
+                <button id="pescoco" onclick="mostrarModal('pescoco')">
+
+                    <img id="" src="" alt="">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="20" viewBox="0 0 42 20" fill="none">
+                        <path
+                            d="M4.5 1C5.30522 9.31686 5.48624 13.7578 2.5 19H40C37.0753 13.9955 37.2038 9.5209 38 1H4.5Z"
+                            fill="white" stroke="black" stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <!-- Peito -->
+
+            <figure class="imagem3">
+                <button id="peito" onclick="mostrarModal('peito')">
+                    <img id="peito" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="112" height="71" viewBox="0 0 112 71" fill="none">
+                        <path d="M111 19.5L96 11L77 1.5H35L14.5 11L1 19.5V52L17 67L48.5 60L62 61.5L94 69.5L111 50V19.5Z"
+                            fill="white" stroke="black" stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <!-- Braço Esquerdo -->
+
+            <figure class="imagem4">
+                <button id="ombro" onclick="mostrarModal('ombroEsquerdo')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="31" height="46" viewBox="0 0 31 46" fill="none">
+                        <path d="M9.5 8L22 2L29.5 43L5 44.5L1.5 31.5L9.5 8Z" fill="white" stroke="black"
+                            stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <figure class="imagem5">
+                <button id="bracoe" onclick="mostrarModal('braçoEsquerdo')">
+                    <img id="" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="39" height="122" viewBox="0 0 39 122" fill="none">
+                        <path
+                            d="M6.63663 56.5C12.5112 37.6009 13.2738 25.6372 13.1366 3.5L37.6366 2L36.1366 30C33.8786 42.6003 34.0345 47.0102 36.1366 51.5C37.6398 55.521 37.569 58.546 36.1366 65L16.1366 120.5H2C2.94526 90.1878 4.0004 70.8473 6.63663 56.5Z"
+                            fill="white" stroke="black" stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <figure class="imagem6">
+                <button onclick="mostrarModal('mãoEsquerda')">
+                    <img id="maoe" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="50" viewBox="0 0 29 50" fill="none">
+                        <path
+                            d="M17.5 48.5C8.53948 47.6145 4.53126 44.8553 1 32C1.30455 20.7318 1.57899 10.6194 1.86337 1.5H16L24.5 21C30.6972 38.3362 28.5752 38.6485 16 24.5C15.7266 29.9513 17.8386 34.0127 24.5 42.5C23.2542 47.4125 21.6528 48.6029 17.5 48.5Z"
+                            fill="white" stroke="black" stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <!-- Braço Direito -->
+
+            <figure class="imagem7">
+                <button onclick="mostrarModal('ombroDireito')">
+                    <img id="ombrod" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="46" viewBox="0 0 32 46" fill="none">
+                        <path d="M22 8L9.5 2L2 43L26.5 44.5L30 31.5L22 8Z" fill="white" stroke="black"
+                            stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <figure class="imagem8">
+                <button onclick="mostrarModal('braçoDireito')">
+                    <img id="" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="39" height="122" viewBox="0 0 39 122" fill="none"
+                        id="bracod">
+                        <path
+                            d="M33.0001 56.5C27.1255 37.6009 26.363 25.6372 26.5001 3.5L2.00009 2L3.50009 30C5.75813 42.6003 5.60224 47.0102 3.50009 51.5C1.99688 55.521 2.06773 58.546 3.50009 65L23.5001 120.5H37.6367C36.6915 90.1878 35.6363 70.8473 33.0001 56.5Z"
+                            fill="white" stroke="black" stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <figure class="imagem9">
+                <button onclick="mostrarModal('mãoDireita')">
+                    <img id="" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="50" viewBox="0 0 30 50" fill="none"
+                        id="maod">
+                        <path
+                            d="M12 48.5C20.9605 47.6145 24.9687 44.8553 28.5 32C28.1954 20.7318 27.921 10.6194 27.6366 1.5H13.5L5 21C-1.19719 38.3362 0.924805 38.6485 13.5 24.5C13.7734 29.9513 11.6614 34.0127 5 42.5C6.24578 47.4125 7.84718 48.6029 12 48.5Z"
+                            fill="white" stroke="black" stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <!-- Tronco -->
+
+            <figure class="imagem10">
+                <button onclick="mostrarModal('tronco')">
+                    <img id="" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="120" viewBox="0 0 100 120" fill="none"
+                        id="tronco">
+                        <path
+                            d="M8.49977 54.5C2.37698 32.1398 0.927945 20.4511 1.99977 1H97.9998C98.2976 23.8677 97.0656 35.7851 90.9998 54.5C93.1505 59.947 93.1673 63.0156 92.4998 68.5C91.0088 76.2298 91.6878 80.6246 93.9998 88.5C96.8667 97.0324 97.3971 101.863 97.9998 110.5H75.4998C65.1658 110.395 57.3884 118.964 49.9998 119C42.7993 119.035 35.968 110.535 27.4998 110.5H1.99977C1.9842 102.264 2.0124 97.6276 4.49977 88.5C6.9345 80.917 7.70653 76.5768 6.99977 68.5C6.6853 60.9388 7.04969 57.9783 8.49977 54.5Z"
+                            fill="white" stroke="black" stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <!-- Perna Esquerda -->
+
+            <figure class="imagem11">
+                <button onclick="mostrarModal('coxaEsquerda')">
+                    <img id="" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="51" height="104" viewBox="0 0 51 104" fill="none"
+                        id="coxae">
+                        <path
+                            d="M27 1H2C2.87464 24.9153 3.6637 39.2179 6.5 69C8.39924 81.1619 10.5857 88.3656 17 102L49 96C47.6432 79.431 47.4826 70.8166 49 57.5V11L27 1Z"
+                            fill="white" stroke="black" stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <figure class="imagem12">
+                <button onclick="mostrarModal('joelhoEsquerdo')">
+                    <img id="" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="38" height="78" viewBox="0 0 38 78" fill="none"
+                        id="joelhoe">
+                        <path d="M36 37.5V2L4 8V26.5L1 55V73.5L36 76.5C32.5157 55.0546 31.5389 44.7762 36 37.5Z"
+                            fill="white" stroke="black" stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <figure class="imagem13">
+                <button onclick="mostrarModal('panturrilhaEsquerda')">
+                    <img id="" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="39" height="81" viewBox="0 0 39 81" fill="none"
+                        id="panturrilhae">
+                        <path
+                            d="M37 23C37.9519 15.3916 38.0551 11.2936 37 4.5L2 1.5C4.79098 23.3652 7.14817 35.8126 15.5 59C17.0911 66.8127 16.7075 71.1883 15.5 79L37 68C33.9776 60.0753 35.287 50.0466 34.8756 43.5C34.1371 31.7464 34.5304 25.1068 37 23Z"
+                            fill="white" stroke="black" stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <figure class="imagem14">
+                <button onclick="mostrarModal('péEsquerdo')">
+                    <img id="" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="39" height="34" viewBox="0 0 39 34" fill="none"
+                        id="pee">
+                        <path
+                            d="M36 28.5C35.1874 25.528 39.0224 9.92472 36 2L14.5 13L1.57895 29.2555C0.537255 30.566 1.4705 32.5 3.1446 32.5H28L36 28.5Z"
+                            fill="white" stroke="black" stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <!-- Perna Direita -->
+
+            <figure class="imagem15">
+                <button onclick="mostrarModal('coxaDireita')">
+                    <img id="" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="104" viewBox="0 0 50 104" fill="none"
+                        id="coxad">
+                        <path
+                            d="M23.1797 1H48.1797C47.305 24.9153 46.516 39.2179 43.6797 69C41.7805 81.1619 39.594 88.3656 33.1797 102L1.17969 96C2.53649 79.431 2.69704 70.8166 1.17969 57.5V11L23.1797 1Z"
+                            fill="white" stroke="black" stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <figure class="imagem16">
+                <button onclick="mostrarModal('joelhoDireito')">
+                    <img id="" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="39" height="78" viewBox="0 0 39 78" fill="none"
+                        id="joelhod">
+                        <path
+                            d="M2.17969 37.5V2L34.1797 8V26.5L37.1797 55V73.5L2.17969 76.5C5.66401 55.0546 6.64077 44.7762 2.17969 37.5Z"
+                            fill="white" stroke="black" stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <figure class="imagem17">
+                <button onclick="mostrarModal('panturrilhaDireita')">
+                    <img id="" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="39" height="81" viewBox="0 0 39 81" fill="none"
+                        id="panturrilhad">
+                        <path
+                            d="M2.17969 23C1.22783 15.3916 1.12454 11.2936 2.17969 4.5L37.1797 1.5C34.3887 23.3652 32.0315 35.8126 23.6797 59C22.0886 66.8127 22.4722 71.1883 23.6797 79L2.17969 68C5.20204 60.0753 3.89273 50.0466 4.30408 43.5C5.04262 31.7464 4.64924 25.1068 2.17969 23Z"
+                            fill="white" stroke="black" stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <figure class="imagem18">
+                <button onclick="mostrarModal('péDireito')">
+                    <img id="" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="39" height="34" viewBox="0 0 39 34" fill="none"
+                        id="ped">
+                        <path
+                            d="M2.17969 28.5C2.9923 25.528 -0.842663 9.92472 2.17969 2L23.6797 13L36.6007 29.2555C37.6424 30.566 36.7092 32.5 35.0351 32.5H10.1797L2.17969 28.5Z"
+                            fill="white" stroke="black" stroke-width="2" />
+                    </svg>
+                </button onclick="mostrarModal()">
+            </figure>
+        </div>
+
+        <div class="corpoVerso">
+
+            <!-- Nuca -->
+
+            <figure class="imagem19">
+                <button id="cabeca" onclick="mostrarModal('nuca')">
+                    <img id="" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="71" viewBox="0 0 56 71" fill="none"
+                        id="nuca">
+                        <path
+                            d="M48.4999 14.5C36.1795 -3.95649 19.7243 -0.839087 7.49992 14.5L4.00011 34.5C-0.416452 42.4312 1.02962 45.296 7.49992 53C7.5 59.1608 10.7944 65.0513 16.5496 67.2498C24.9401 70.4549 31.8398 70.6255 39.6191 67.5739C45.4068 65.3035 48.4999 59.2171 48.4999 53C56.0114 43.3038 56.7185 38.8789 50.9999 33L48.4999 14.5Z"
+                            fill="white" stroke="black" stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <!-- Pescoço -->
+
+            <figure class="imagem20">
+                <button onclick="mostrarModal('pescoçoVerso')">
+                    <img id="" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="20" viewBox="0 0 42 20" fill="none"
+                        id="pescocov">
+                        <path
+                            d="M4.5 1C5.30522 9.31686 5.48624 13.7578 2.5 19H40C37.0753 13.9955 37.2038 9.5209 38 1H4.5Z"
+                            fill="white" stroke="black" stroke-width="2" />
+                    </svg>
+                </button onclick="mostrarModal()">
+            </figure>
+
+            <!-- Costas -->
+
+            <figure class="imagem21">
+                <button onclick="mostrarModal('costas')">
+                    <img id="" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="112" height="88" viewBox="0 0 112 88" fill="none"
+                        id="costas">
+                        <path d="M111 19L96 10.5L77 1H35L14.5 10.5L1 19V51.5L10.5 86L47.5 72H64.5L103.5 86L111 49.5V19Z"
+                            fill="white" stroke="black" stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <!-- Braço Esquerdo -->
+
+            <figure class="imagem22">
+                <button onclick="mostrarModal('ombroEsquerdoVerso')">
+                    <img id="" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="43" viewBox="0 0 25 43" fill="none"
+                        id="ombroev">
+                        <path d="M4.5 18.5C6.45189 8.69518 9.88843 4.86806 21.5 2L23.5 41.5H2L4.5 18.5Z" stroke="black"
+                            stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <figure class="imagem23">
+                <button onclick="mostrarModal('braçoEsquerdoVerso')">
+                    <img id="" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="38" height="122" viewBox="0 0 38 122" fill="none"
+                        id="bracoev">
+                        <path
+                            d="M11.1504 40.5C10.6319 27.3946 10.7224 18.4842 11.1504 1.5H32.6504L36.1504 31C34.2539 35.435 33.4831 39.638 32.6504 50.5C31.5008 74.4959 28.8963 85.2383 22.1503 101.5C17.9385 109.61 16.2554 113.898 16.1503 120.5H1.0791C1.92931 97.9121 2.57346 82.233 3.65035 57C6.00993 49.4616 7.77279 46.0804 11.1504 40.5Z"
+                            stroke="black" stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <figure class="imagem24">
+                <button onclick="mostrarModal('mãoEsquerdaVerso')">
+                    <img id="" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="45" viewBox="0 0 26 45" fill="none"
+                        id="maoev">
+                        <path
+                            d="M5.65059 37.5C0.839008 30.9725 -0.376726 26.0671 2.65059 13C2.8006 8.94243 2.94264 5.1319 3.07934 1.5H18.1506C21.3582 5.75652 22.5306 8.31747 24.1506 13V30.5C22.4755 33.5396 21.2684 34.0246 18.1506 30.5C15.4189 22.0553 13.8742 22.1064 11.1506 30.5C13.0544 36.4039 15.2885 38.0117 21.6506 37.5C25.3081 41.6283 25.3261 42.8896 21.6506 43.5L5.65059 37.5Z"
+                            stroke="black" stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <!-- Braço Direito -->
+
+            <figure class="imagem25">
+                <button onclick="mostrarModal('ombroDireitoVerso')">
+                    <img id="" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="43" viewBox="0 0 25 43" fill="none"
+                        id="ombrodv">
+                        <path
+                            d="M20.6504 18.5C18.6985 8.69518 15.262 4.86806 3.65039 2L1.65039 41.5H23.1504L20.6504 18.5Z"
+                            stroke="black" stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <figure class="imagem26">
+                <button onclick="mostrarModal('braçoDireitoVerso')">
+                    <img id="" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="39" height="122" viewBox="0 0 39 122" fill="none"
+                        id="ombrodv">
+                        <path
+                            d="M27 40.5C27.5185 27.3946 27.428 18.4842 27 1.5H5.50004L2.00004 31C3.89646 35.435 4.6673 39.638 5.50004 50.5C6.64955 74.4959 9.25405 85.2383 16 101.5C20.2119 109.61 21.895 113.898 22 120.5H37.0713C36.2211 97.9121 35.5769 82.233 34.5 57C32.1405 49.4616 30.3776 46.0804 27 40.5Z"
+                            stroke="black" stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <figure class="imagem27">
+                <button onclick="mostrarModal('mãoDireitaVerso')">
+                    <img id="" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="27" height="45" viewBox="0 0 27 45" fill="none"
+                        id="maodv">
+                        <path
+                            d="M20.4998 37.5C25.3114 30.9725 26.5271 26.0671 23.4998 13C23.3498 8.94243 23.2078 5.1319 23.071 1.5H7.9998C4.79219 5.75652 3.61976 8.31747 1.9998 13V30.5C3.67488 33.5396 4.88203 34.0246 7.9998 30.5C10.7315 22.0553 12.2762 22.1064 14.9998 30.5C13.096 36.4039 10.8619 38.0117 4.4998 37.5C0.842241 41.6283 0.824251 42.8896 4.4998 43.5L20.4998 37.5Z"
+                            stroke="black" stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <!-- Tronco -->
+
+            <figure class="imagem28">
+                <button onclick="mostrarModal('troncoVerso')">
+                    <img id="" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="96" height="94" viewBox="0 0 96 94" fill="none"
+                        id="troncov">
+                        <path
+                            d="M38 1L1.5 15.5L7.5 36.5C7.61761 43.5369 6.88414 47.5915 4.5 55V65C5.89305 68.7648 5.98939 71.3131 4.5 77L1.5 93H92.5L90 77C88.9389 71.4893 88.3807 68.4236 90 65V55C87.182 48.2574 86.0076 44.3066 85.5 36.5L94.5 15.5L55.5 1H38Z"
+                            stroke="black" stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <!-- Bunda -->
+
+            <figure class="imagem29">
+                <button onclick="mostrarModal('bunda')">
+                    <img id="" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="99" height="47" viewBox="0 0 99 47" fill="none"
+                        id="bunda">
+                        <path
+                            d="M95.5001 1H4.50007C0.793811 11.9378 1.15043 23.593 2.50007 46H97.0001C98.2906 29.3899 98.6694 19.8972 95.5001 1Z"
+                            fill="white" />
+                        <path
+                            d="M56.5001 6C49.8121 21.3453 48.2502 29.4254 55.9737 40.2757C56.3024 40.7374 56.8342 41.0324 57.3986 41.0843C79.1102 43.0837 84.7492 40.7496 89.5001 34M43.0001 6C49.7744 24.7594 50.7181 33.1255 43.4352 40.566C43.1567 40.8505 42.7849 41.0394 42.3928 41.109C26.9947 43.8433 19.4022 42.8765 9.50007 34M4.50007 1H95.5001C98.6694 19.8972 98.2906 29.3899 97.0001 46H2.50007C1.15043 23.593 0.793811 11.9378 4.50007 1Z"
+                            stroke="black" stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <!-- Perna Esquerda -->
+
+            <figure class="imagem30">
+                <button onclick="mostrarModal('coxaEsquerdaVerso')">
+                    <img id="" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="88" viewBox="0 0 50 88" fill="none"
+                        id="coxaev">
+                        <path
+                            d="M2 1H49V86.5H17.4624C17.4237 77.5504 16.1727 69.424 13.5 59C6.95637 35.165 4.01982 22.2302 2 1Z"
+                            stroke="black" stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <figure class="imagem31">
+                <button onclick="mostrarModal('joelhoEsquerdoVerso')">
+                    <img id="" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="39" height="41" viewBox="0 0 39 41" fill="none"
+                        id="joelhoev">
+                        <path
+                            d="M37 1.5C34.6193 9.80374 34.258 18.2985 35 39L1.96493 32.5C2.37571 30.1095 2.8866 27.6307 3.5 25C4.80629 15.7373 5.49209 8.37567 5.46237 1.5H37Z"
+                            stroke="black" stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <figure class="imagem32">
+                <button onclick="mostrarModal('panturrilhaEsquerdaVerso')">
+                    <img id="" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="41" height="88" viewBox="0 0 41 88" fill="none"
+                        id="panturrilhaev">
+                        <path
+                            d="M14.5 77L4.5 42C1.4209 24.8354 0.790516 14.6537 2.96493 2L36 8.5L38 30.5L33.5 55C32.3732 72.7096 32.9847 80.3034 38 86.5H14.5848C15.0943 83.5904 15.0956 80.4663 14.5 77Z"
+                            stroke="black" stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <figure class="imagem33">
+                <button onclick="mostrarModal('péEsquerdoVerso')">
+                    <img id="" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="38" height="25" viewBox="0 0 38 25" fill="none"
+                        id="peev">
+                        <path
+                            d="M37 23.5H3.77785C2.00323 23.5 1.09325 21.3449 2.27652 20.0223C7.89733 13.7399 11.2761 7.98883 12.5 1H37V23.5Z"
+                            stroke="black" stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <!-- Perna Direita -->
+
+            <figure class="imagem34">
+                <button onclick="mostrarModal('coxaDireitaVerso')">
+                    <img id="" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="88" viewBox="0 0 50 88" fill="none"
+                        id="coxadv">
+                        <path
+                            d="M48 1H1V86.5H32.5376C32.5763 77.5504 33.8273 69.424 36.5 59C43.0436 35.165 45.9802 22.2302 48 1Z"
+                            stroke="black" stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <figure class="imagem35">
+                <button onclick="mostrarModal('joelhoDireitoVerso')">
+                    <img id="" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="39" height="41" viewBox="0 0 39 41" fill="none"
+                        id="joelhodv">
+                        <path
+                            d="M2 1.5C4.38071 9.80374 4.74199 18.2985 4 39L37.0351 32.5C36.6243 30.1095 36.1134 27.6307 35.5 25C34.1937 15.7373 33.5079 8.37567 33.5376 1.5H2Z"
+                            stroke="black" stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <figure class="imagem36">
+                <button onclick="mostrarModal('panturrilhaDireitaVerso')">
+                    <img id="" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="41" height="88" viewBox="0 0 41 88" fill="none"
+                        id="panturrilhadv">
+                        <path
+                            d="M26.5 77L36.5 42C39.5791 24.8354 40.2095 14.6537 38.0351 2L5 8.5L3 30.5L7.5 55C8.6268 72.7096 8.01526 80.3034 3 86.5H26.4152C25.9057 83.5904 25.9044 80.4663 26.5 77Z"
+                            stroke="black" stroke-width="2" />
+                    </svg>
+                </button>
+            </figure>
+
+            <figure class="imagem37">
+
+                <button onclick="mostrarModal('péDireitoVerso')">
+                    <img id="" src="" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="38" height="25" viewBox="0 0 38 25" fill="none"
+                        id="pedv">
+                        <path
+                            d="M1 23.5H34.2222C35.9968 23.5 36.9067 21.3449 35.7235 20.0223C30.1027 13.7399 26.7239 7.98883 25.5 1H1V23.5Z"
+                            stroke="black" stroke-width="2" />
+                    </svg>
+
+                </button>
+
+            </figure>
+        </div>
+
+    </div>
+
+
+    <!-- Janela modal -->
+    <div id="modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <p>Escolha a categoria:</p>
+            <button id="fraturas" onclick="selectTrauma('Fraturas-Luxações-Entorses')"> <img src="/img/Frame 22.png"
+                    alt=""> Fraturas /
+                Luxações /
+                Entorses</button>
+            <button onclick="selectTrauma('Ferimentos-Diversos')"> <img src="/img/Frame 23.png" alt=""> Ferimentos
+                Diversos</button>
+            <button onclick="selectTrauma('Hemorragias')"> <img src="/img/Frame 24.png" alt="">Hemorragias</button>
+            <button onclick="selectTrauma('Evisceração')"> <img src="/img/Frame 25.png" alt="">Evisceração</button>
+            <button onclick="selectTrauma('F.A.B./F.A.F.')"> <img src="/img/Frame 26.png" alt="">F.A.B./F.A.F.</button>
+            <button onclick="selectTrauma('Amputação')"> <img src="/img/Frame 27.png" alt="">Amputação</button>
+            <button onclick="selectTrauma('Queimadura 1°Grau')"> <img src="/img/Frame 28.png" alt="">Queimadura
+                1°Grau</button>
+            <button onclick="selectTrauma('Queimadura 2°Grau')"> <img src="/img/Frame 29.png" alt="">Queimadura
+                2°Grau</button>
+            <button onclick="selectTrauma('Queimadura 3°Grau')"> <img src="/img/Frame 30.png" alt="">Queimadura
+                3°Grau</button>
+        </div>
+    </div>
+
+    <div>
+        <button onclick="enviarTrauma()">Enviar pro banco</button>
+    </div>
+
+    <div>
+        <p>Tipo de ferimento:</p>
+        <p id="tipo"></p>
+    </div>
+
+    <script src="../jquery-1.8.2.min.js"></script>
+    <script src="assets.js"></script>
+
+</body>
+
+</html>
+

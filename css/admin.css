@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman&display=swap');
+body {
+    background-color: #090909;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#inicio{
+    margin-top: 12vh;
+}
+#inicio img {
+    width: 230px;
+}
+#titulo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#titulo h1 {
+    margin-bottom: 0px;
+    color: #ED1D25;
+    text-align: center;
+    font-family: 'Goldman', cursive;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: auto;
+}
+#titulo h2 {
+    margin-top: 0px;
+    color: #FFF;
+    font-family: Goldman;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: auto;
+}
+.opcoes{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 35%;
+}
+.opcoes input{
+    border-radius: 8px;
+    margin-top: 10%;
+    font-size: 25px;
+}
+#voltar{
+position: fixed;
+width: 20%;
+height: 4%;
+text-decoration: none;
+bottom: 30px;
+left: 20px;
+cursor: pointer;
+}
+#voltar input{
+width: 100%;
+height: 100%;
+font-size: 20px;
+border-radius: 8px;
+}
+
+.invisivel{
+    background-color: #f2f2f2;
+    border-radius: 8px;
+   
+}
+.opcoesEquipes{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+}
+.nomeEquipe{
+    font-size: 25px;
+    margin-left: 5%;
+}
+.equipe{
+    display: flex;
+    align-items: center;
+}
+.equipe img{
+    height: 80%;
+    cursor: pointer;
+}
+.lixeira{
+    cursor: pointer;
+}
+.lapis{
+    cursor: pointer;
+}
+.botaoAcao{
+    height:10vh;
+}
+.historico{
+    height: 100%;
+    width:100%;
+}
+#cadastrar{
+    display: flex;
+    text-decoration: none;
+}
+
