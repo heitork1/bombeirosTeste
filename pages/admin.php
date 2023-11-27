@@ -19,10 +19,10 @@
         </div>
     </section>
     <div class="opcoes">
-        <input type="button" value="Gerenciar Equipes" class="botaoAcao" id="botaoGerenciarEquipes">
+        <input type="button" value="Gerenciar Equipes" class="botaoAcao" id="botaoGerenciarEquipes"></input>
         <!-- procurar no bootstrap -->
         <div class="invisivel" style="display: none;">
-      <!-- <?php
+    <?php
         error_reporting(E_ALL);
         ini_set('display_errors', 1);
         include('../database/conexao.php'); // Inclua o arquivo de conexão
@@ -35,14 +35,18 @@
         if ($result) {
             // Iterar sobre os resultados da consulta
             while ($row = mysqli_fetch_assoc($result)) {
-        ?>  -->
+        ?> 
             <div class="opcoesEquipes">
                 <div class="equipe">
-                    <img src="../img/equipeBomb.png" alt="">
+                    <img id="iconeBombeiro" src="../img/equipeBomb.png" alt="">
                     <form method="post" action="../database/atualizarEquipe.php">
+           <div id="nomeSalvar">
+            
             <input type="text" name="novo_nome" value="<?php echo $row['equipe'] ?>" />
             <input type="hidden" name="equipe_id" value="<?php echo $row['id_equipe_atendimento']; ?>" />
-            <button type="submit">Salvar</button>
+            <button id="salvar" type="submit">Salvar</button>
+        
+        </div>
         </form>
                 </div>
                 <div>
@@ -57,13 +61,13 @@
 
 //Feche a conexão com o banco de dados
     mysqli_close($conexao);
-    ?> -->
+    ?> 
     <div class="opcoesEquipe">
         <div class="equipe">
         <a href="doCadastro.php" id="cadastrar"> 
        
             <img src="../img/adicionar.png" alt="">
-            <p>Adicionar equipe</p>
+            <p id="adicionarEquipe">+ Adicionar equipe</p>
             </img src="../img/equipeBomb.png" alt="">
             
         </a>    

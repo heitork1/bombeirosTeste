@@ -36,3 +36,5 @@ mostrarSenhaButton2.addEventListener("click", function () {
         senhaVisivel2 = true;
     }
 });
+
+

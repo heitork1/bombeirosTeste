@@ -8,20 +8,26 @@
 </head>
 <body>
     <h1 id="titulo">Ocorrência enviada <br> com sucesso!</h1>
-    <img id="correto" src="/img/correto.svg" alt="">
+    <img id="correto" src="../img/correto.svg" alt="">
     
 <div id="botoes">
-    <button id="sairdaconta">Sair da conta
-        <img src="/img/sair.png" alt="">
+    
+    <button id="sairdaconta" onclick="logout()">Sair da conta 
+        <img src="../img/sair.png" alt="">
     </button>
-
-  <a href="/pages/ocorrencia.html">
-    <button id="registrar">Registrar outra ocorrência  
-    <img src="/img/registro.png " alt="">
-    </button>
-  </a>
+   
+    <a href="/pages/ocorrencia.html">
+        <button id="registrar"">Registrar outra ocorrência  
+        <img src="../img/registro.png " alt="">
+        </button>
+    </a>
 
 </div>
-
+<script>
+function logout() {
+    // Use window.location.href para redirecionar em JavaScript
+    window.location.href = '../database/logout.php';
+}
+</script>
 </body>
 </html>

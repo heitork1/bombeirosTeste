@@ -41,7 +41,7 @@
         </form>    
     </section>
 
-    <a id="irlogin" href="/index.html">
+    <a id="irlogin" href="../index.html">
         
         <p id="facaLogin"> Já tem uma conta? <u>Faça login aqui</u>  </p>
     
